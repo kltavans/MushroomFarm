@@ -27,7 +27,7 @@ public class ConnectionManager {
             Class.forName(driverName);
             try {
                 con = DriverManager.getConnection(url, username, password);
-                catch (SQLException ex) {
+            } catch (SQLException ex) {
                 // exception-handling
                 System.out.println("Failed to create the database connection."); 
             }

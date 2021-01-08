@@ -1,4 +1,4 @@
-package com.example.MushroomFarm.DAL;
+package com.example.MushroomFarm;
 
 import java.sql.*;
 

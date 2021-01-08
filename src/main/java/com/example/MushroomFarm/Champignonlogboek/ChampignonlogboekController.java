@@ -1,4 +1,4 @@
-package Champignonlogboek;
+package com.example.MushroomFarm.Champignonlogboek;
 
 import java.sql.Date;
 import java.util.List;

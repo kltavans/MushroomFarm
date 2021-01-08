@@ -1,4 +1,4 @@
-package Meting;
+package com.example.MushroomFarm.Meting;
 
 import java.sql.Date;
 import java.util.List;

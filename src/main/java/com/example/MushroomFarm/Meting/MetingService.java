@@ -1,4 +1,4 @@
-package Meting;
+package com.example.MushroomFarm.Meting;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

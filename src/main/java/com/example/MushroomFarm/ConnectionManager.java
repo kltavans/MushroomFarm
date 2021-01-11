@@ -3,12 +3,6 @@ package com.example.MushroomFarm;
 import java.sql.*;
 
 public class ConnectionManager {
-	private static String url = "jdbc:postgresql://hattie.db.elephantsql.com:5432/eginsovo";
-	private static String driverName = "org.postgresql.Driver";
-	private static String username = "eginsovo";
-	private static String password = "MAwqwl8m5-ItPA0nUdxL8FkcWOUzu3Ys";
-	private static Connection con;
-
 	public static Connection getConnection() {
         
 		/*
@@ -23,9 +17,14 @@ public class ConnectionManager {
 		 * rs = stmt.executeQuery(sql); 
 		 *
 		 */
+		Connection con = null;
+		String driverName = "org.postgresql.Driver";
     	try {
             Class.forName(driverName);
             try {
+            	String url = "jdbc:postgresql://dumbo.db.elephantsql.com:5432/bzdngywh";
+            	String username = "bzdngywh";
+            	String password = "YurydegZVw_m0WjksPTQb1cmzEiV6wP2";
                 con = DriverManager.getConnection(url, username, password);
             } catch (SQLException ex) {
                 // exception-handling

@@ -8,6 +8,7 @@ public class MushroomFarmApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MushroomFarmApplication.class, args);
+		Postgres.getAlleMetingen();
 	}
 
 }

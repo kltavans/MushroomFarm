@@ -3,12 +3,12 @@ import java.sql.*;
 
 public class Postgres {
 	
-	public void getAlleMetingen()
+	public static void getAlleMetingen()
 	{
         try {
     		  Connection con = ConnectionManager.getConnection();
     		  Statement st = con.createStatement();
-              ResultSet rs = st.executeQuery("SELECT * FROM testmeting");
+              ResultSet rs = st.executeQuery("SELECT * FROM metingen");
               while (rs.next()) {
                   System.out.print("metingid ");
                   System.out.println(rs.getString(1));
@@ -22,8 +22,8 @@ public class Postgres {
                   System.out.println(rs.getString(5));
                   System.out.print("Column 6 returned ");
                   System.out.println(rs.getString(6));
-    		 
             } 
+            con.close();
             rs.close();
             st.close();
             }

@@ -16,25 +16,25 @@ public class ChampignonProfielService {
         return champignonProfielRepository.findAll();
     }
 
-    public void save(ChampignonProfiel champignonProfiel) {
-    	champignonProfielRepository.save(champignonProfiel);
+    public void save(ChampignonProfiel champignon_profiel) {
+    	champignonProfielRepository.save(champignon_profiel);
     }
 	
-    public void change(ChampignonProfiel champignonProfiel) {
-    	champignonProfielRepository.save(champignonProfiel);
+    public void change(ChampignonProfiel champignon_profiel) {
+    	champignonProfielRepository.save(champignon_profiel);
     }
 
-    public ChampignonProfiel get(long champignonID) {
-        return champignonProfielRepository.findById((int) champignonID).get();
+    public ChampignonProfiel get(long champignon_id) {
+        return champignonProfielRepository.findById((int) champignon_id).get();
     }
 
 
-    public void delete(long champignonID) {
-    	champignonProfielRepository.deleteById((int) champignonID);
+    public void delete(long champignon_id) {
+    	champignonProfielRepository.deleteById((int) champignon_id);
     }
     
-    public String findID(long champignonID ) {
-    	return champignonProfielRepository.findID(champignonID);
+    public String findID(long champignon_id ) {
+    	return champignonProfielRepository.findID(champignon_id);
     }
     
 }

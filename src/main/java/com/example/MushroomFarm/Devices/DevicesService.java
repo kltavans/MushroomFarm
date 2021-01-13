@@ -24,21 +24,21 @@ public class DevicesService {
     	devicesRepository.save(device);
     }
 
-    public Device get(long deviceID) {
-        return devicesRepository.findById((int) deviceID).get();
+    public Device get(long device_id) {
+        return devicesRepository.findById((int) device_id).get();
     }
 
 
-    public void delete(long deviceID) {
-    	devicesRepository.deleteById((int) deviceID);
+    public void delete(long device_id) {
+    	devicesRepository.deleteById((int) device_id);
     }
     
-    public String findID(long deviceID ) {
-    	return devicesRepository.findID(deviceID);
+    public String findID(long device_id ) {
+    	return devicesRepository.findID(device_id);
     }
     
-    public String alldevicenaam(String deviceNaam) {
-    	return devicesRepository.alldevicenaam(deviceNaam);
+    public String alldevicenaam(String device_naam) {
+    	return devicesRepository.alldevicenaam(device_naam);
     }
     
 }

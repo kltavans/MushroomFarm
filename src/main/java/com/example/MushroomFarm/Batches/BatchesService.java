@@ -24,17 +24,17 @@ public class BatchesService {
     	batchRepository.save(batch);
     }
 
-    public Batch get(long batchID) {
-        return batchRepository.findById((int) batchID).get();
+    public Batch get(long batch_id) {
+        return batchRepository.findById((int) batch_id).get();
     }
 
 
-    public void delete(long batchID) {
-    	batchRepository.deleteById((int) batchID);
+    public void delete(long batch_id) {
+    	batchRepository.deleteById((int) batch_id);
     }
     
-    public String findID(long batchID ) {
-    	return batchRepository.findID(batchID);
+    public String findID(long batch_id ) {
+    	return batchRepository.findID(batch_id);
     }
     
 }

@@ -10,10 +10,10 @@ public interface DevicesRepository extends JpaRepository<Device, Integer> {
 	
 	//Een query om alle devices te krijgen om een lijst ervan te maken
 	
-	@Query(value = "SELECT deviceNaam FROM Devices WHERE deviceNaam =?1", nativeQuery = true)
-	String alldevicenaam(String deviceNaam);
+	@Query(value = "SELECT device_naam FROM Devices WHERE device_naam =?1", nativeQuery = true)
+	String alldevicenaam(String device_naam);
 			
-	@Query(value = "SELECT deviceID FROM Devices WHERE deviceID =?1", nativeQuery = true)
-	String findID(long deviceID);
+	@Query(value = "SELECT device_id FROM Devices WHERE device_id =?1", nativeQuery = true)
+	String findID(long device_id);
 
 }

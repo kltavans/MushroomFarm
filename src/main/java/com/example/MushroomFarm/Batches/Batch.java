@@ -13,16 +13,16 @@ public class Batch {
 	
 	@Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    public Integer batchID;
+    public Integer batch_id;
 	
-	@Column(name = "champignonID", nullable = false, unique = false)
-    private Integer champignonID;
+	@Column(name = "champignon_id", nullable = false, unique = false)
+    private Integer champignon_id;
 	
-	@Column(name = "deviceID", nullable = false, unique = false)
-    private Integer deviceID;
+	@Column(name = "device_id", nullable = false, unique = false)
+    private Integer device_id;
 	
-	@Column(name = "champignonSoort", nullable = false, unique = false)
-    private String champignonSoort;
+	@Column(name = "champignon_soort", nullable = false, unique = false)
+    private String champignon_soort;
 	
 	@Column(name = "grootte", nullable = false, unique = false)
     private String grootte;
@@ -36,44 +36,44 @@ public class Batch {
 		
 	}
 	
-	public Batch(Integer champignonID, Integer deviceID, String champignonSoort, String grootte, Integer groeitijd) {
-		this.champignonID = champignonID;
-		this.deviceID = deviceID;
-		this.champignonSoort = champignonSoort;
+	public Batch(Integer champignon_id, Integer device_id, String champignon_soort, String grootte, Integer groeitijd) {
+		this.champignon_id = champignon_id;
+		this.device_id = device_id;
+		this.champignon_soort = champignon_soort;
 		this.grootte = grootte;
 		this.groeitijd = groeitijd;
 	}
 
-	public Integer getBatchID() {
-		return batchID;
+	public Integer getBatch_id() {
+		return batch_id;
 	}
 
-	public void setBatchID(Integer batchID) {
-		this.batchID = batchID;
+	public void setBatch_id(Integer batch_id) {
+		this.batch_id = batch_id;
 	}
 
-	public Integer getChampignonID() {
-		return champignonID;
+	public Integer getChampignon_id() {
+		return champignon_id;
 	}
 
-	public void setChampignonID(Integer champignonID) {
-		this.champignonID = champignonID;
+	public void setChampignon_id(Integer champignon_id) {
+		this.champignon_id = champignon_id;
 	}
 
-	public Integer getDeviceID() {
-		return deviceID;
+	public Integer getDevice_id() {
+		return device_id;
 	}
 
-	public void setDeviceID(Integer deviceID) {
-		this.deviceID = deviceID;
+	public void setDevice_id(Integer device_id) {
+		this.device_id = device_id;
 	}
 
-	public String getChampignonSoort() {
-		return champignonSoort;
+	public String getChampignon_soort() {
+		return champignon_soort;
 	}
 
-	public void setChampignonSoort(String champignonSoort) {
-		this.champignonSoort = champignonSoort;
+	public void setChampignon_soort(String champignon_soort) {
+		this.champignon_soort = champignon_soort;
 	}
 
 	public String getGrootte() {
@@ -91,6 +91,5 @@ public class Batch {
 	public void setGroeitijd(Integer groeitijd) {
 		this.groeitijd = groeitijd;
 	}
-	
-	
+
 }

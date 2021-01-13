@@ -23,10 +23,10 @@
     		<table id="devices-table">
 			    <tbody class="devices-table-tbody" th:each="device : ${listDevices}">
 			    	<tr class="devices-table-tr">
-			        	<th class="devices-table-th" colspan="1" th:text="${device.deviceNaam}">deviceNaam</th>
+			        	<th class="devices-table-th" colspan="1" th:text="${device.device_naam}">device_naam</th>
 			        </tr>
 			        <tr class="devices-table-tr">
-			        	<td class="devices-table-td" colspan="2" th:text="${device.sectorNaam}">sectorNaam</td>
+			        	<td class="devices-table-td" colspan="2" th:text="${device.sector_naam}">sector_naam</td>
 			    </tbody>
 			</table>
     		  		

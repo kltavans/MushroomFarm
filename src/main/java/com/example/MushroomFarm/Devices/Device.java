@@ -13,13 +13,13 @@ public class Device {
 	
 	@Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    public Integer deviceID;
+    public Integer device_id;
 	
-	@Column(name = "deviceNaam", nullable = false, unique = false)
-    private String deviceNaam;
+	@Column(name = "device_naam", nullable = false, unique = false)
+    private String device_naam;
 	
-	@Column(name = "sectorNaam", nullable = false, unique = false)
-    private String sectorNaam;
+	@Column(name = "sector_naam", nullable = false, unique = false)
+    private String sector_naam;
 	
 	
 	//Constructors
@@ -27,33 +27,33 @@ public class Device {
 		
 	}
 	
-	public Device(String deviceNaam, String sectorNaam) {
-		this.deviceNaam = deviceNaam;
-		this.sectorNaam = sectorNaam;
+	public Device(String device_naam, String sector_naam) {
+		this.device_naam = device_naam;
+		this.sector_naam = sector_naam;
 	}
 
-	//Getters & Setters
-	public Integer getDeviceID() {
-		return deviceID;
+	public Integer getDevice_id() {
+		return device_id;
 	}
 
-	public void setDeviceID(Integer deviceID) {
-		this.deviceID = deviceID;
+	public void setDevice_id(Integer device_id) {
+		this.device_id = device_id;
+	}
+
+	public String getDevice_naam() {
+		return device_naam;
+	}
+
+	public void setDevice_naam(String device_naam) {
+		this.device_naam = device_naam;
+	}
+
+	public String getSector_naam() {
+		return sector_naam;
+	}
+
+	public void setSector_naam(String sector_naam) {
+		this.sector_naam = sector_naam;
 	}
 	
-	public String getDeviceNaam() {
-		return deviceNaam;
-	}
-
-	public void setDeviceNaam(String deviceNaam) {
-		this.deviceNaam = deviceNaam;
-	}
-
-	public String getSectorNaam() {
-		return sectorNaam;
-	}
-
-	public void setSectorNaam(String sectorNaam) {
-		this.sectorNaam = sectorNaam;
-	}
 }

@@ -25,9 +25,9 @@ public class DevicesController {
     }
 
 	@RequestMapping(value = "/device/save", method = RequestMethod.POST)
-	public String saveDevice(@RequestParam("deviceNaam") String deviceNaam,
-            @RequestParam("sectorNaam") String sectorNaam) {
-		Device device = new Device(deviceNaam, sectorNaam);
+	public String saveDevice(@RequestParam("device_naam") String device_naam,
+            @RequestParam("sector_naam") String sector_naam) {
+		Device device = new Device(device_naam, sector_naam);
 		deviceService.save(device);
 
 		return "redirect:/";

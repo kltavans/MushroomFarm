@@ -25,12 +25,12 @@ public class BatchesController {
     }
 
 	@RequestMapping(value = "/batch/save", method = RequestMethod.POST)
-	public String saveBatch(@RequestParam("champignonID") Integer champignonID,
-            @RequestParam("deviceID") Integer deviceID,
-            @RequestParam("champignonSoort") String champignonSoort,
+	public String saveBatch(@RequestParam("champignon_id") Integer champignon_id,
+            @RequestParam("device_id") Integer device_id,
+            @RequestParam("champignon_soort") String champignon_soort,
             @RequestParam("grootte") String grootte,
             @RequestParam("groeitijd") Integer groeitijd) {
-		Batch batCH = new Batch(champignonID, deviceID, champignonSoort, grootte, groeitijd);
+		Batch batCH = new Batch(champignon_id, device_id, champignon_soort, grootte, groeitijd);
 		batchesService.save(batCH);
 
 		return "redirect:/";

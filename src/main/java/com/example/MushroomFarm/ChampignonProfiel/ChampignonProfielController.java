@@ -16,6 +16,7 @@ public class ChampignonProfielController {
 	@Autowired
 	private ChampignonProfielService champignonProfielService;
 	
+	//De pagina om de toegevoegde champignon profielen op te halen
 	@RequestMapping("/champignon-profielen")
     public String viewAllChampignonProfielen(Model model) {
 		List<ChampignonProfiel> listChampignonProfielen = champignonProfielService.listAll();
@@ -24,6 +25,7 @@ public class ChampignonProfielController {
 	    return "champignonProfielen";
     }
 	
+	//De pagina om een champignon profiel toe te voegen
 	@RequestMapping("/champignon-profiel/toevoegen")
     public String showNewProductPage(Model model) {
         ChampignonProfiel champignon_profiel = new ChampignonProfiel();
@@ -32,6 +34,7 @@ public class ChampignonProfielController {
         return "champignonProfielToevoegen";
     }
 
+	//Het opslaan van een champignon profiel
 	@RequestMapping(value = "/champignon-profiel/save", method = RequestMethod.POST)
 	public String saveChampignonProfiel(@RequestParam("champignon_soort") String champignon_soort,
             @RequestParam("grootte") String grootte,

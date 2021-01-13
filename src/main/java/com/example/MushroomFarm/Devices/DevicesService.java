@@ -37,5 +37,9 @@ public class DevicesService {
     	return devicesRepository.findID(deviceID);
     }
     
+    public String alldevicenaam(String deviceNaam) {
+    	return devicesRepository.alldevicenaam(deviceNaam);
+    }
+    
 }
 

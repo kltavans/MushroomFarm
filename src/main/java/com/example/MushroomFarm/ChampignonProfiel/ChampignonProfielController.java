@@ -10,28 +10,29 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+@Controller
 public class ChampignonProfielController {
 	
 	@Autowired
 	private ChampignonProfielService champignonProfielService;
 	
-	@RequestMapping("/champignonprofiel/toevoegen")
+	@RequestMapping("/champignon-profiel/toevoegen")
     public String showNewProductPage(Model model) {
-        ChampignonProfiel champignonProfiel = new ChampignonProfiel();
-        model.addAttribute("champignonProfiel", champignonProfiel);
+        ChampignonProfiel champignon_profiel = new ChampignonProfiel();
+        model.addAttribute("champignon_profiel", champignon_profiel);
 
-        return "ChampignonProfielToevoegen";
+        return "champignonProfielToevoegen";
     }
 
-	@RequestMapping(value = "/champignonprofiel/save", method = RequestMethod.POST)
-	public String saveChampignonProfiel(@RequestParam("champignonSoort") String champignonSoort,
+	@RequestMapping(value = "/champignon-profiel/save", method = RequestMethod.POST)
+	public String saveChampignonProfiel(@RequestParam("champignon_soort") String champignon_soort,
             @RequestParam("grootte") String grootte,
-            @RequestParam("groeitijd") String groeitijd,
+            @RequestParam("groeitijd") Integer groeitijd,
             @RequestParam("lux") Integer lux,
             @RequestParam("temperatuur") Double temperatuur,
             @RequestParam("luchtvochtigheid") Integer luchtvochtigheid) {
-		ChampignonProfiel champignonProfiel = new ChampignonProfiel(champignonSoort, grootte, groeitijd, lux, temperatuur, luchtvochtigheid);
-		champignonProfielService.save(champignonProfiel);
+		ChampignonProfiel champignon_profiel = new ChampignonProfiel(champignon_soort, grootte, groeitijd, lux, temperatuur, luchtvochtigheid);
+		champignonProfielService.save(champignon_profiel);
 
 		return "redirect:/";
 	}

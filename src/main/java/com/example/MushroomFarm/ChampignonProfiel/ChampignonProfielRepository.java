@@ -11,7 +11,7 @@ public interface ChampignonProfielRepository extends JpaRepository<ChampignonPro
 	// custom query to search to blog post by title or content
 	//  List<Product> findByTitleContainingOrContentContaining(String text, String textAgain);
 			
-	@Query(value = "SELECT champignonID FROM ChampignonProfielen WHERE champignonID =?1", nativeQuery = true)
-	String findID(long champignonID);
+	@Query(value = "SELECT champignon_id FROM ChampignonProfielen WHERE champignon_id =?1", nativeQuery = true)
+	String findID(long champignon_id);
 
 }

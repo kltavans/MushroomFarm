@@ -8,21 +8,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="champignonprofielen")
+@Table(name="ChampignonProfielen")
 public class ChampignonProfiel {
 	
 	@Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    public Integer champignonID;
+    public Integer champignon_id;
 	
-	@Column(name = "champignonSoort", nullable = false, unique = false)
-    private String champignonSoort;
+	@Column(name = "champignon_soort", nullable = false, unique = false)
+    private String champignon_soort;
 	
 	@Column(name = "grootte", nullable = false, unique = false)
     private String grootte;
 	
 	@Column(name = "groeitijd", nullable = false, unique = false)
-    private String groeitijd;
+    private Integer groeitijd;
 	
 	@Column(name = "lux", nullable = false, unique = false)
     private Integer lux;
@@ -39,8 +39,8 @@ public class ChampignonProfiel {
 		
 	}
 	
-	public ChampignonProfiel(String champignonSoort, String grootte, String groeitijd, Integer lux, Double temperatuur, Integer luchtvochtigheid) {
-		this.champignonSoort = champignonSoort;
+	public ChampignonProfiel(String champignon_soort, String grootte, Integer groeitijd, Integer lux, Double temperatuur, Integer luchtvochtigheid) {
+		this.champignon_soort = champignon_soort;
 		this.grootte = grootte;
 		this.groeitijd = groeitijd;
 		this.lux = lux;
@@ -49,20 +49,20 @@ public class ChampignonProfiel {
 	}
 
 	//Getters & Setters
-	public Integer getChampignonID() {
-		return champignonID;
+	public Integer getChampignon_id() {
+		return champignon_id;
 	}
 
-	public void setChampignonID(Integer champignonID) {
-		this.champignonID = champignonID;
-	}
-	
-	public String getChampignonSoort() {
-		return champignonSoort;
+	public void setChampignon_id(Integer champignon_id) {
+		this.champignon_id = champignon_id;
 	}
 
-	public void setChampignonSoort(String champignonSoort) {
-		this.champignonSoort = champignonSoort;
+	public String getChampignon_soort() {
+		return champignon_soort;
+	}
+
+	public void setChampignon_soort(String champignon_soort) {
+		this.champignon_soort = champignon_soort;
 	}
 
 	public String getGrootte() {
@@ -73,11 +73,11 @@ public class ChampignonProfiel {
 		this.grootte = grootte;
 	}
 
-	public String getGroeitijd() {
+	public Integer getGroeitijd() {
 		return groeitijd;
 	}
 
-	public void setGroeitijd(String groeitijd) {
+	public void setGroeitijd(Integer groeitijd) {
 		this.groeitijd = groeitijd;
 	}
 
@@ -103,6 +103,6 @@ public class ChampignonProfiel {
 
 	public void setLuchtvochtigheid(Integer luchtvochtigheid) {
 		this.luchtvochtigheid = luchtvochtigheid;
-	}
+	}		
 	
 }

@@ -16,6 +16,14 @@ public class ChampignonProfielController {
 	@Autowired
 	private ChampignonProfielService champignonProfielService;
 	
+	@RequestMapping("/champignon-profielen")
+    public String viewAllChampignonProfielen(Model model) {
+		List<ChampignonProfiel> listChampignonProfielen = champignonProfielService.listAll();
+	    model.addAttribute("listChampignonProfielen", listChampignonProfielen);
+
+	    return "champignonProfielen";
+    }
+	
 	@RequestMapping("/champignon-profiel/toevoegen")
     public String showNewProductPage(Model model) {
         ChampignonProfiel champignon_profiel = new ChampignonProfiel();
@@ -34,7 +42,7 @@ public class ChampignonProfielController {
 		ChampignonProfiel champignon_profiel = new ChampignonProfiel(champignon_soort, grootte, groeitijd, lux, temperatuur, luchtvochtigheid);
 		champignonProfielService.save(champignon_profiel);
 
-		return "redirect:/";
+		return "redirect:/champignon-profielen";
 	}
 
 }

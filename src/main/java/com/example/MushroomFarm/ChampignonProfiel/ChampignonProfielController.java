@@ -47,5 +47,29 @@ public class ChampignonProfielController {
 
 		return "redirect:/champignon-profielen";
 	}
+	
+	//De pagina om een champignon profiel te wijzigen
+    @RequestMapping("/champignon-profiel/{champignon_id}/bijwerken")
+    public ModelAndView showChampignonProfielBijwerkenPage(@PathVariable(name = "champignon_id") int champignon_id) {
+        ModelAndView mav = new ModelAndView("champignonProfielBijwerken");
+        ChampignonProfiel champignon_profiel = champignonProfielService.get(champignon_id);
+        mav.addObject("champignon_profiel", champignon_profiel);
+
+        return mav;
+    }
+    
+    //Het wijzigen van een champignon profiel opslaan
+    @RequestMapping(value = "/champignon-profiel/{champignon_id}/bijwerken/save", method = RequestMethod.POST)
+    public String champignonProfielBijwerken(@RequestParam("champignon_id") Integer cp_champignon_id, 
+    		@RequestParam("champignon_soort") String cp_champignon_soort,
+            @RequestParam("grootte") String cp_grootte,
+            @RequestParam("groeitijd") Integer cp_groeitijd,
+            @RequestParam("lux") Integer cp_lux,
+            @RequestParam("temperatuur") Double cp_temperatuur,
+            @RequestParam("luchtvochtigheid") Integer cp_luchtvochtigheid) {
+    	champignonProfielService.champignonProfielBijwerken(cp_champignon_soort, cp_grootte, cp_groeitijd, cp_lux, cp_temperatuur, cp_luchtvochtigheid, cp_champignon_id);
+
+        return "redirect:/champignon-profielen";
+    }
 
 }

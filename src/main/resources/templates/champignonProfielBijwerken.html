@@ -3,10 +3,10 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
-    <title>Mushroom Farm - Champignon Profiel Toevoegen</title>
+    <title>Mushroom Farm - Champignon Profiel Bijwerken</title>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
-    <link href="../static/css/champignonProfielToevoegen.css" th:href="@{/css/champignonProfielToevoegen.css}" rel="stylesheet" />
+    <link href="../static/css/champignonProfielBijwerken.css" th:href="@{/css/champignonProfielBijwerken.css}" rel="stylesheet" />
 </head>
 <body>
 
@@ -14,27 +14,32 @@
 		<div class="navigation-bar">
 			<div class="brand">
 				<ul>
-					<li><a href="/">Mushroom Farm</a></li>
+					<li><a href="/">Mushroom <span>Farm</span></a></li>
 				</ul>
   			</div>
 			<div class="navigation-list">
 				<ul>
 					<li><a href="/">Sectoren</a></li>
 					<li><a href="/">Logboek</a></li>
-					<li><a href="/">Profielen</a></li>
+					<li><a href="/champignon-profielen">Profielen</a></li>
+					<li><a href="/device">Devices</a></li>
 				</ul>
   			</div>
 		</div>
 	</div>
 	<hr>
-	
-	<div align="center">
-	
-    	<h1>Champignon Profiel Toevoegen</h1>
-    	<br/>
+    
+    <div align="center">
     	
-	    <form action="#" th:action="@{/champignon-profiel/save}" th:object="${champignon_profiel}" onsubmit="required()" method="post">
+    	<h1>Champignon Profiel Bijwerken</h1>
+    	<br />
+    	
+    	<form action="#" th:action="@{/champignon-profiel/{champignon_id}/bijwerken/save}" th:object="${champignon_profiel}" method="post">
 	        <table id="#champignon-profiel-table" border="0" cellpadding="10">
+	        	<tr>
+	                <td>Champignon ID:</td>
+	                <td><input type="text" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{champignon_id}" readonly="readonly"/></td>
+	            </tr>
 	            <tr>
 	                <td>Champignon Soort:</td>
 	                <td><input type="text" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{champignon_soort}" /></td>
@@ -67,7 +72,7 @@
 	            	<td><input type="number" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{luchtvochtigheid}" /></td>
 	            </tr>
 	            <tr>
-	                <td colspan="2"><button type="submit">Toevoegen</button> </td>
+	                <td colspan="2"><button type="submit">Bijwerken</button> </td>
 	            </tr>
 	        </table>
 	    </form>

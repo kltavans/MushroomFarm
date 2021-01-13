@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+@Controller
 public class DevicesController {
 	
 	@Autowired
@@ -20,7 +21,7 @@ public class DevicesController {
         Device device = new Device();
         model.addAttribute("device", device);
 
-        return "ChampignonProfielToevoegen";
+        return "DeviceToevoegen";
     }
 
 	@RequestMapping(value = "/device/save", method = RequestMethod.POST)
@@ -31,5 +32,21 @@ public class DevicesController {
 
 		return "redirect:/";
 	}
+	
+	@RequestMapping("/device/aanpassen")
+	public String showNewGebruikerAanpassen(Model model) {
+		Device device = new Device();
+		model.addAttribute("device", device);
+		
+		return "DeviceAanpassen";
+	}
+	
+	@RequestMapping("/device")
+    public String viewAllDevices(Model model) {
+		List<Device> listDevices = deviceService.listAll();
+	    model.addAttribute("listDevices", listDevices);
+
+	    return "Devices";
+    }
 
 }

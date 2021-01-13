@@ -9,6 +9,9 @@ import org.springframework.stereotype.Repository;
 public interface DevicesRepository extends JpaRepository<Device, Integer> {
 	
 	//Een query om alle devices te krijgen om een lijst ervan te maken
+	
+	@Query(value = "SELECT deviceNaam FROM Devices WHERE deviceNaam =?1", nativeQuery = true)
+	String alldevicenaam(String deviceNaam);
 			
 	@Query(value = "SELECT deviceID FROM Devices WHERE deviceID =?1", nativeQuery = true)
 	String findID(long deviceID);

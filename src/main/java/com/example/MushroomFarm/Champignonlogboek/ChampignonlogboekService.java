@@ -24,16 +24,16 @@ public class ChampignonlogboekService {
     	champignonlogboekRepository.save(champignonlogboek);
     }
 
-    public Champignonlogboek get(long meldingnummer) {
-        return champignonlogboekRepository.findById((int) meldingnummer).get();
+    public Champignonlogboek get(long nummer) {
+        return champignonlogboekRepository.findById((int) nummer).get();
     }
 
 
-    public void delete(long meldingnummer) {
-    	champignonlogboekRepository.deleteById((int) meldingnummer);
+    public void delete(long nummer) {
+    	champignonlogboekRepository.deleteById((int) nummer);
     }
     
-    public String findID(long meldingnummer ) {
-    	return champignonlogboekRepository.findID(meldingnummer);
+    public String findID(long nummer ) {
+    	return champignonlogboekRepository.findID(nummer);
     }
 }

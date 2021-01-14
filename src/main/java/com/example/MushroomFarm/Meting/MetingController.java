@@ -24,13 +24,13 @@ public class MetingController {
     }
 
 	@RequestMapping(value = "/meting/save", method = RequestMethod.POST)
-	public String saveMeting(@RequestParam("metingID") int metingID,
-            @RequestParam("deviceID") String deviceID,
+	public String saveMeting(@RequestParam("meting_id") int meting_id,
+            @RequestParam("device_id") String device_id,
             @RequestParam("datum") Date datum,
             @RequestParam("lux") int lux,
             @RequestParam("temperatuur") Double temperatuur,
             @RequestParam("luchtvochtigheid") int luchtvochtigheid) {
-		Meting meting = new Meting(metingID, deviceID, datum, lux, temperatuur, luchtvochtigheid);
+		Meting meting = new Meting(meting_id, device_id, datum, lux, temperatuur, luchtvochtigheid);
 		metingService.save(meting);
 
 		return "redirect:/";

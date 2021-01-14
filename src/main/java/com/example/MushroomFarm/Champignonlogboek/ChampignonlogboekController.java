@@ -24,16 +24,16 @@ public class ChampignonlogboekController {
 	}
 
 	@RequestMapping(value = "/champignonlogboek/save", method = RequestMethod.POST)
-	public String saveLogboek(@RequestParam("champignonlogboekID") int meldingnummer,
-			@RequestParam("metingID") int metingID, @RequestParam("datum") Date datum,
-			@RequestParam("deviceID") String deviceID, @RequestParam("champignonsoort") String champignonsoort,
-			@RequestParam("grootte") String grootte, @RequestParam("meldingLux") String meldingLux,
-			@RequestParam("lux") int lux, @RequestParam("meldingTemperatuur") String meldingTemperatuur,
+	public String saveLogboek(@RequestParam("nummer") int nummer,
+			@RequestParam("meting_id") int meting_id, @RequestParam("datum") Date datum,
+			@RequestParam("device_id") String device_id, @RequestParam("champignon_soort") String champignon_soort,
+			@RequestParam("grootte") String grootte, @RequestParam("melding_lux") String melding_lux,
+			@RequestParam("lux") int lux, @RequestParam("melding_temperatuur") String melding_temperatuur,
 			@RequestParam("temperatuur") Double temperatuur,
-			@RequestParam("meldingLuchtvochtigheid") String meldingLuchtvochtigheid,
+			@RequestParam("melding_luchtvochtigheid") String melding_luchtvochtigheid,
 			@RequestParam("luchtvochtigheid") int luchtvochtigheid) {
-		Champignonlogboek champignonlogboek = new Champignonlogboek(meldingnummer, metingID, datum, deviceID,
-				champignonsoort, grootte, meldingLux, lux, meldingTemperatuur, temperatuur, meldingLuchtvochtigheid,
+		Champignonlogboek champignonlogboek = new Champignonlogboek(nummer, meting_id, datum, device_id,
+				champignon_soort, grootte, melding_lux, lux, melding_temperatuur, temperatuur, melding_luchtvochtigheid,
 				luchtvochtigheid);
 		champignonlogboekService.save(champignonlogboek);
 

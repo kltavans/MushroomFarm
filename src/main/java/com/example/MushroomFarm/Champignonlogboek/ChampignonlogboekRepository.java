@@ -11,6 +11,6 @@ public interface ChampignonlogboekRepository extends JpaRepository<Champignonlog
 	// custom query to search to blog post by title or content
 		//  List<Product> findByTitleContainingOrContentContaining(String text, String textAgain);
 			
-		@Query(value = "SELECT meldingnummer FROM Champignonlogboek WHERE meldingnummer =?1", nativeQuery = true)
-		String findID(long meldingnummer);
+		@Query(value = "SELECT nummer FROM Champignon_Logboeken WHERE nummer =?1", nativeQuery = true)
+		String findID(long nummer);
 }

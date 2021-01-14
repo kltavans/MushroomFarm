@@ -16,10 +16,10 @@ public class Meting {
 
 	@Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    public int metingID;
+    public int meting_id;
 	
-	@Column(name = "deviceID", nullable = false, unique = false)
-    private String deviceID;
+	@Column(name = "device_id", nullable = false, unique = false)
+    private String device_id;
 	
 	@Column(name = "datum", nullable = false, unique = false)
     private Date datum;
@@ -40,8 +40,8 @@ public class Meting {
 
 	public Meting(int metingID, String deviceID, Date datum, int lux, Double temperatuur,
 			int luchtvochtigheid) {
-		this.metingID = metingID;
-		this.deviceID = deviceID;
+		this.meting_id = metingID;
+		this.device_id = deviceID;
 		this.datum = datum;
 		this.lux = lux;
 		this.temperatuur = temperatuur;
@@ -49,19 +49,19 @@ public class Meting {
 	}
 
 	public int getMetingID() {
-		return metingID;
+		return meting_id;
 	}
 
 	public void setMetingID(int metingID) {
-		this.metingID = metingID;
+		this.meting_id = metingID;
 	}
 
 	public String getDeviceID() {
-		return deviceID;
+		return device_id;
 	}
 
 	public void setDeviceID(String deviceID) {
-		this.deviceID = deviceID;
+		this.device_id = deviceID;
 	}
 
 	public Date getDatum() {

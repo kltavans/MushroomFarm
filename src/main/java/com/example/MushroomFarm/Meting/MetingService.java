@@ -23,16 +23,16 @@ public class MetingService {
     	metingRepository.save(meting);
     }
 
-    public Meting get(long metingID) {
-        return metingRepository.findById((int) metingID).get();
+    public Meting get(long meting_id) {
+        return metingRepository.findById((int) meting_id).get();
     }
 
 
-    public void delete(long metingID) {
-    	metingRepository.deleteById((int) metingID);
+    public void delete(long meting_id) {
+    	metingRepository.deleteById((int) meting_id);
     }
     
-    public String findID(long metingID ) {
-    	return metingRepository.findID(metingID);
+    public String findID(long meting_id ) {
+    	return metingRepository.findID(meting_id);
     }
 }

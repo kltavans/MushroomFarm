@@ -22,7 +22,7 @@ public class ChampignonProfielController {
 		List<ChampignonProfiel> listChampignonProfielen = champignonProfielService.listAll();
 	    model.addAttribute("listChampignonProfielen", listChampignonProfielen);
 
-	    return "champignonProfielen";
+	    return "champignonProfielenOverzicht";
     }
 	
 	//De pagina om een champignon profiel toe te voegen

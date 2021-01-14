@@ -3,10 +3,10 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
-    <title>Mushroom Farm - Champignon Profielen</title>
+    <title>Mushroom Farm - Champignon Profielen Overzicht</title>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
-    <link href="../static/css/champignonProfielen.css" th:href="@{/css/champignonProfielen.css}" rel="stylesheet" />
+    <link href="../static/css/champignonProfielenOverzicht.css" th:href="@{/css/champignonProfielenOverzicht.css}" rel="stylesheet" />
 </head>
 <body>
 
@@ -30,7 +30,7 @@
 	<hr>
 	
 	<div class="cp-overzicht">
-    	<h1>Champignon Profielen</h1>
+    	<h1>Champignon Profielen Overzicht</h1>
     	<br/>
 	    <table id="cp-table">
 			<tbody>
@@ -42,7 +42,7 @@
 			    <th>Temperatuur</th>
 			    <th>Luchtvochtigheid</th>
 			  </tr>
-			  <tr th:each="champignon_profiel ORDER BY champignon_id : ${listChampignonProfielen}">
+			  <tr th:each="champignon_profiel : ${listChampignonProfielen}">
 			    <td th:text="${champignon_profiel.champignon_soort}">Champignon Soort</td>
 			    <td th:text="${champignon_profiel.grootte}">Grootte</td>
 			    <td th:text="${champignon_profiel.groeitijd} + ' dagen'">Groeitijd</td>

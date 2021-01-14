@@ -1,17 +1,10 @@
-h1 {
-	color: #000000;
-	font-weight: bold;
+#cp-bijwerken-table {
+	justify-content: center;
+	align-items: left;
+	color: black;
 }
 
-h2, a {
-	font-size: 1em;
-	color: #000000;
-	font-weight: bold;
-	text-decoration: none;
-}
-
-#champignon-profiel-table {
-  justify-content: center;
-  align-items: left;
-  color: black;
+td {
+	padding: 5px;
+  	font-size: 16px;
 }

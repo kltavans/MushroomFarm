@@ -11,6 +11,6 @@ public interface MetingRepository extends JpaRepository<Meting, Integer>{
 	// custom query to search to blog post by title or content
 		//  List<Product> findByTitleContainingOrContentContaining(String text, String textAgain);
 			
-		@Query(value = "SELECT metingID FROM Metingen WHERE metingID =?1", nativeQuery = true)
-		String findID(long metingID);
+		@Query(value = "SELECT meting_id FROM Metingen WHERE meting_id=?1", nativeQuery = true)
+		String findID(long meting_id);
 }

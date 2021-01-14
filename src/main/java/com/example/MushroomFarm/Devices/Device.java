@@ -12,14 +12,14 @@ import javax.persistence.Table;
 public class Device {
 	
 	@Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    public Integer device_id;
+	@Column(name = "device_id", nullable = false, unique = false)
+    public String device_id;
 	
 	@Column(name = "device_naam", nullable = false, unique = false)
     private String device_naam;
 	
-	@Column(name = "sector_naam", nullable = false, unique = false)
-    private String sector_naam;
+	@Column(name = "sectornaam", nullable = false, unique = false)
+    private String sectornaam;
 	
 	
 	//Constructors
@@ -27,16 +27,17 @@ public class Device {
 		
 	}
 	
-	public Device(String device_naam, String sector_naam) {
+	public Device(String device_id, String device_naam, String sectornaam) {
+		this.device_id = device_id;
 		this.device_naam = device_naam;
-		this.sector_naam = sector_naam;
+		this.sectornaam = sectornaam;
 	}
 
-	public Integer getDevice_id() {
+	public String getDevice_id() {
 		return device_id;
 	}
 
-	public void setDevice_id(Integer device_id) {
+	public void setDevice_id(String device_id) {
 		this.device_id = device_id;
 	}
 
@@ -48,12 +49,12 @@ public class Device {
 		this.device_naam = device_naam;
 	}
 
-	public String getSector_naam() {
-		return sector_naam;
+	public String getSectornaam() {
+		return sectornaam;
 	}
 
-	public void setSector_naam(String sector_naam) {
-		this.sector_naam = sector_naam;
+	public void setSectornaam(String sectornaam) {
+		this.sectornaam = sectornaam;
 	}
 	
 }

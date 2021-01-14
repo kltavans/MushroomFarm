@@ -3,6 +3,9 @@ package com.example.MushroomFarm.Devices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.example.MushroomFarm.ChampignonProfiel.ChampignonProfiel;
+
 import java.util.List;
 
 @Service
@@ -24,13 +27,13 @@ public class DevicesService {
     	devicesRepository.save(device);
     }
 
-    public Device get(long device_id) {
-        return devicesRepository.findById((int) device_id).get();
+    public Device get(String device_id) {
+        return devicesRepository.findById((String) device_id).get();
     }
 
 
-    public void delete(long device_id) {
-    	devicesRepository.deleteById((int) device_id);
+    public void delete(String device_id) {
+    	devicesRepository.deleteById((String) device_id);
     }
     
     public String findID(long device_id ) {
@@ -39,6 +42,10 @@ public class DevicesService {
     
     public String alldevicenaam(String device_naam) {
     	return devicesRepository.alldevicenaam(device_naam);
+    }
+    
+    public String deviceAanpassen(String device_id, String device_naam, String sectornaam) {
+    	return devicesRepository.deviceAanpassen(device_id, device_naam, sectornaam);
     }
     
 }

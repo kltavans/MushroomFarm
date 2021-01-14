@@ -19,7 +19,7 @@ public class Batch {
     private Integer champignon_id;
 	
 	@Column(name = "device_id", nullable = false, unique = false)
-    private Integer device_id;
+    private String device_id;
 	
 	@Column(name = "champignon_soort", nullable = false, unique = false)
     private String champignon_soort;
@@ -36,7 +36,7 @@ public class Batch {
 		
 	}
 	
-	public Batch(Integer champignon_id, Integer device_id, String champignon_soort, String grootte, Integer groeitijd) {
+	public Batch(Integer champignon_id, String device_id, String champignon_soort, String grootte, Integer groeitijd) {
 		this.champignon_id = champignon_id;
 		this.device_id = device_id;
 		this.champignon_soort = champignon_soort;
@@ -60,11 +60,11 @@ public class Batch {
 		this.champignon_id = champignon_id;
 	}
 
-	public Integer getDevice_id() {
+	public String getDevice_id() {
 		return device_id;
 	}
 
-	public void setDevice_id(Integer device_id) {
+	public void setDevice_id(String device_id) {
 		this.device_id = device_id;
 	}
 

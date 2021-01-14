@@ -42,7 +42,7 @@
 			    <th>Temperatuur</th>
 			    <th>Luchtvochtigheid</th>
 			  </tr>
-			  <tr th:each="champignon_profiel : ${listChampignonProfielen}">
+			  <tr th:each="champignon_profiel ORDER BY champignon_id : ${listChampignonProfielen}">
 			    <td th:text="${champignon_profiel.champignon_soort}">Champignon Soort</td>
 			    <td th:text="${champignon_profiel.grootte}">Grootte</td>
 			    <td th:text="${champignon_profiel.groeitijd} + ' dagen'">Groeitijd</td>

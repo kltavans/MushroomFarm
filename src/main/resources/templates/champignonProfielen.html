@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Mushroom Farm - Champignon Profielen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <link href="../static/css/champignonProfielen.css" th:href="@{/css/champignonProfielen.css}" rel="stylesheet" />
+</head>
+<body>
+
+	<div class="container">
+		<div class="navigation-bar">
+			<div class="brand">
+				<ul>
+					<li><a href="/">Mushroom <span>Farm</span></a></li>
+				</ul>
+  			</div>
+			<div class="navigation-list">
+				<ul>
+					<li><a href="/">Sectoren</a></li>
+					<li><a href="/">Logboek</a></li>
+					<li><a href="/champignon-profielen">Profielen</a></li>
+					<li><a href="/device">Devices</a></li>
+				</ul>
+  			</div>
+		</div>
+	</div>
+	<hr>
+	
+	<div class="cp-overzicht">
+    	<h1>Champignon Profielen</h1>
+    	<br/>
+	    <table id="cp-table">
+			<tbody>
+			  <tr>
+			    <th>Champignon Soort</th>
+			    <th>Grootte</th>
+			    <th>Groeitijd</th>
+			    <th>Lux</th>
+			    <th>Temperatuur</th>
+			    <th>Luchtvochtigheid</th>
+			  </tr>
+			  <tr th:each="champignon_profiel ORDER BY champignon_id : ${listChampignonProfielen}">
+			    <td th:text="${champignon_profiel.champignon_soort}">Champignon Soort</td>
+			    <td th:text="${champignon_profiel.grootte}">Grootte</td>
+			    <td th:text="${champignon_profiel.groeitijd} + ' dagen'">Groeitijd</td>
+			    <td th:text="${champignon_profiel.lux} + ' lx'">Lux</td>
+			    <td th:text="${champignon_profiel.temperatuur} + ' °C'">Temperatuur</td>
+			    <td th:text="${champignon_profiel.luchtvochtigheid} + ' %'">Luchtvochtigheid</td>
+			  </tr>
+		  	</tbody>
+		</table>
+		
+		<br/>
+		<button><a href="/champignon-profiel/toevoegen">Toevoegen</a></button>
+	</div>
+    
+</body>
+</html>

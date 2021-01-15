@@ -1,23 +1,10 @@
-.cp-toevoegen {
-	max-width: 1400px;
-	margin: auto;
-	padding: 20px;
+#cp-toevoegen-table {
+	justify-content: center;
+	align-items: left;
+	color: black;
 }
 
-h1 {
-	color: #000000;
-	font-weight: bold;
-}
-
-h2, a {
-	font-size: 1em;
-	color: #000000;
-	font-weight: bold;
-	text-decoration: none;
-}
-
-#champignon-profiel-table {
-  justify-content: center;
-  align-items: left;
-  color: black;
+td {
+	padding: 5px;
+  	font-size: 16px;
 }

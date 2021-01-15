@@ -35,7 +35,7 @@
     	<br />
     	
     	<form action="#" th:action="@{/champignon-profiel/{champignon_id}/bijwerken/save}" th:object="${champignon_profiel}" method="post">
-	        <table id="#champignon-profiel-table" border="0" cellpadding="10">
+	        <table id="#cp-bijwerken-table" border="0" cellpadding="10">
 	        	<tr>
 	                <td>Champignon ID:</td>
 	                <td><input type="text" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{champignon_id}" readonly="readonly"/></td>

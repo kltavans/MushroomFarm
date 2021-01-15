@@ -6,7 +6,7 @@
     <title>Mushroom Farm - Devices</title>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
-    <link href="../static/css/champignonProfielen.css" th:href="@{/css/champignonProfielen.css}" rel="stylesheet" />
+    <link href="../static/css/batch.css" th:href="@{/css/batch.css}" rel="stylesheet" />
 </head>
 <body>
     <div class="container">
@@ -27,10 +27,11 @@
   			</div>
 		</div>
 	</div>
-    <div class="cp-overzicht">
+	<hr>
+    <div class="batches-overzicht">
     	<h1>Devices</h1>
     	<br/>
-	    <table id="cp-table">
+	    <table id="batches-table">
 			<tbody>
 			  <tr>
 			    <th>Batch ID</th>
@@ -40,7 +41,7 @@
 			    <th>Grootte</th>
 			    <th>Groeitijd</th>
 			  </tr>
-			  <tr th:each="Batch : ${listBatch}">
+			  <tr th:each="batch : ${listBatch}">
 			    <td th:text="${batch.batch_id}">Batch ID</td>
 			    <td th:text="${batch.champignon_id}">Champignon ID</td>
 			    <td th:text="${batch.device_id}">Device ID</td>

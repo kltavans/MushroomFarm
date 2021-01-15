@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.MushroomFarm.ChampignonProfiel.ChampignonProfiel;
+
 @Controller
 public class DevicesController {
 	
@@ -25,21 +27,34 @@ public class DevicesController {
     }
 
 	@RequestMapping(value = "/device/save", method = RequestMethod.POST)
-	public String saveDevice(@RequestParam("device_naam") String device_naam,
-            @RequestParam("sector_naam") String sector_naam) {
-		Device device = new Device(device_naam, sector_naam);
+	public String saveDevice(@RequestParam("device_id") String device_id,
+			@RequestParam("device_naam") String device_naam,
+            @RequestParam("sectornaam") String sectornaam) {
+		Device device = new Device(device_id, device_naam, sectornaam);
 		deviceService.save(device);
 
-		return "redirect:/";
+		return "redirect:/device";
 	}
 	
-	@RequestMapping("/device/aanpassen")
-	public String showNewGebruikerAanpassen(Model model) {
-		Device device = new Device();
-		model.addAttribute("device", device);
-		
-		return "DeviceAanpassen";
-	}
+	//Naar pagina om aan te passen
+	@RequestMapping("/device/{device_id}/aanpassen")
+    public ModelAndView showDeviceAanpassenPage(@PathVariable(name = "device_id") String device_id) {
+        ModelAndView mav = new ModelAndView("deviceAanpassen");
+        Device device = deviceService.get(device_id);
+        mav.addObject("device", device);
+
+        return mav;
+    }
+	
+	//Om aanpassingen op te slaan
+	@RequestMapping(value = "/device/{device_id}/aanpassen/save", method = RequestMethod.POST)
+    public String deviceAanpassen(@RequestParam("device_id") String device_id, 
+    		@RequestParam("device_naam") String device_naam,
+            @RequestParam("sectornaam") String sectornaam) {
+		deviceService.deviceAanpassen(device_id, device_naam, sectornaam);
+
+        return "redirect:/device";
+    }
 	
 	@RequestMapping("/device")
     public String viewAllDevices(Model model) {

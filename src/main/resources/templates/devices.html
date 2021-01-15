@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Mushroom Farm - Devices</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <link href="../static/css/device.css" th:href="@{/css/device.css}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+		<div class="navigation-bar">
+			<div class="brand">
+				<ul>
+					<li><a href="/">Mushroom <span>Farm</span></a></li>
+				</ul>
+  			</div>
+			<div class="navigation-list">
+				<ul>
+					<li><a href="/">Sectoren</a></li>
+					<li><a href="/">Logboek</a></li>
+					<li><a href="/champignon-profielen">Profielen</a></li>
+					<li><a href="/device">Devices</a></li>
+					<li><a href="/batch">Batches</a></li>
+				</ul>
+  			</div>
+		</div>
+	</div>
+	<hr>
+    <div class="devices-overzicht">
+    	<h1>Devices</h1>
+    	<br/>
+	    <table id="devices-table">
+			<tbody>
+			  <tr>
+			    <th>Device ID</th>
+			    <th>Device naam</th>
+			    <th>Sectornaam</th>
+			  </tr>
+			  <tr th:each="device : ${listDevices}">
+			    <td th:text="${device.device_id}">Device ID</td>
+			    <td th:text="${device.device_naam}">Device naam</td>
+			    <td th:text="${device.sectornaam}">Sectornaam</td>
+			  </tr>
+		  	</tbody>
+		</table>
+		
+		<br/>
+		<button><a href="/device/toevoegen">Toevoegen</a></button>
+		<button><a href="/device/{device_id}/aanpassen">Aanpassen</a></button>
+	</div>
+    <div id="bottomLine" class="line"></div>
+</body>
+</html>

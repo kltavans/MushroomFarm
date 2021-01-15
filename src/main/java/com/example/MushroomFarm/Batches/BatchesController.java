@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.MushroomFarm.Devices.Device;
+
 @Controller
 public class BatchesController {
 	
@@ -26,7 +28,7 @@ public class BatchesController {
 
 	@RequestMapping(value = "/batch/save", method = RequestMethod.POST)
 	public String saveBatch(@RequestParam("champignon_id") Integer champignon_id,
-            @RequestParam("device_id") Integer device_id,
+            @RequestParam("device_id") String device_id,
             @RequestParam("champignon_soort") String champignon_soort,
             @RequestParam("grootte") String grootte,
             @RequestParam("groeitijd") Integer groeitijd) {
@@ -35,5 +37,13 @@ public class BatchesController {
 
 		return "redirect:/";
 	}
+	
+	@RequestMapping("/batch")
+    public String viewAllBatches(Model model) {
+		List<Batch> listBatch = batchesService.listAll();
+	    model.addAttribute("listBatch", listBatch);
+
+	    return "batches";
+    }
 
 }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Mushroom Farm - Device Toevoegen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <link href="../static/css/champignonProfielToevoegen.css" th:href="@{/css/champignonProfielToevoegen.css}" rel="stylesheet" />
+</head>
+<body>
+
+	<div class="container">
+		<div class="navigation-bar">
+			<div class="brand">
+				<ul>
+					<li><a href="/">Mushroom Farm</a></li>
+				</ul>
+  			</div>
+			<div class="navigation-list">
+				<ul>
+					<li><a href="/">Sectoren</a></li>
+					<li><a href="/">Logboek</a></li>
+					<li><a href="/">Profielen</a></li>
+					<li><a href="/device">Devices</a></li>
+				</ul>
+  			</div>
+		</div>
+	</div>
+	<hr>
+	
+	<div align="center">
+	
+    	<h1>Device Toevoegen</h1>
+    	<br/>
+    	
+	    <form action="#" th:action="@{/device/save}" th:object="${device}" onsubmit="required()" method="post">
+	        <table id="#device-table" border="0" cellpadding="10">
+	            <tr>
+	                <td>Device ID:</td>
+	                <td><input type="text" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{device_id}" /></td>
+	            </tr>
+	            <tr>
+	                <td>Device naam:</td>
+	                <td><input type="text" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{device_naam}" /></td>
+	            </tr>
+	            <tr>
+	                <td>Sectornaam:</td>
+	                <td><input type="text" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{sectornaam}" /></td>
+	            </tr>
+	            <tr>
+	                <td colspan="2"><button type="submit">Toevoegen</button> </td>
+	            </tr>
+	        </table>
+	    </form>
+	    
+	</div>
+    
+</body>
+</html>

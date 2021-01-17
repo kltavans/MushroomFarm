@@ -9,6 +9,8 @@
 	rel="stylesheet">
 <link href="../static/css/style.css" th:href="@{/css/style.css}"
 	rel="stylesheet" />
+<link href="../static/css/metingen.css"
+	th:href="@{/css/metingen.css}" rel="stylesheet" />
 </head>
 <body>
 
@@ -16,43 +18,47 @@
 		<div class="navigation-bar">
 			<div class="brand">
 				<ul>
-					<li><a href="/">Mushroom Farm - Metingen</a></li>
+					<li><a href="/">Mushroom Farm</a></li>
 				</ul>
 			</div>
 			<div class="navigation-list">
 				<ul>
 					<li><a href="/">Sectoren</a></li>
-					<li><a href="/">Logboek</a></li>
-					<li><a href="/">Profielen</a></li>
-					<li><a href="/">Metingen</a></li>
+					<li><a href="/logboek">Logboek</a></li>
+					<li><a href="/meting">Metingen</a></li>
+					<li><a href="/champignon-profielen">Profielen</a></li>
 					<li><a href="/device">Devices</a></li>
+					<li><a href="/batch">Batches</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	<hr>
-	<table>
-		<tr>
-			<th>Device-ID</th>
-			<th>Datum</th>
-			<th>Lichtsterkte (lx)</th>
-			<th>Temperatuur (&#176;C)</th>
-			<th>Luchtvochtigheid (%)</th>			
-		</tr>
-		<tr>
-			<td>0059AC00001B04A4</td>
-			<td>09:55:51 2021-01-11</td>
-			<td>14</td>
-			<td>22.7</td>
-			<td>44%</td>
-		</tr>
-		<tr>
-			<td>0059AC00001B04A6</td>
-			<td>12:56:22 2021-01-11</td>
-			<td>255 lx</td>
-			<td></td>
-			<td>55%</td>
-		</tr>
-	</table>
+
+	<div class="metingen-overzicht">
+		<h1>Metingen</h1>
+		<br />
+		<table id="metingen-table">
+			<tbody>
+				<tr>
+					<th>Meting ID</th>			
+<!-- 					<th>Device ID</th> -->
+					<th>Datum</th>
+					<th>Lux</th>
+					<th>Temperatuur</th>
+					<th>Luchtvochtigheid</th>
+				</tr>
+				<tr th:each="meting : ${listMetingen}">
+					<td th:text="${meting.meting_id}">Meting ID</td>
+<!-- 					<td th:text="${meting.device_id}">Device ID</td> -->
+					<td th:text="${meting.datum}">Datum</td>
+					<td th:text="${meting.lux} + ' lx'">Lux</td>
+					<td th:text="${meting.temperatuur} + ' °C'">Temperatuur</td>
+					<td th:text="${meting.luchtvochtigheid} + ' %'">Luchtvochtigheid</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
 </body>
 </html>

@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.MushroomFarm.ChampignonProfiel.ChampignonProfiel;
+
+@Controller
 public class ChampignonlogboekController {
 	@Autowired
 	private ChampignonlogboekService champignonlogboekService;
@@ -22,6 +25,15 @@ public class ChampignonlogboekController {
 
 		return "ChampignonlogboekToevoegen";
 	}
+	
+	//De pagina om de toegevoegde champignon profielen op te halen
+		@RequestMapping("/logboek")
+	    public String viewChampignonlogboek(Model model) {
+			List<Champignonlogboek> listChampignonlogboek = champignonlogboekService.listAll();
+		    model.addAttribute("listChampignonlogboek", listChampignonlogboek);
+
+		    return "champignonlogboek";
+	    }
 
 	@RequestMapping(value = "/champignonlogboek/save", method = RequestMethod.POST)
 	public String saveLogboek(@RequestParam("nummer") int nummer,

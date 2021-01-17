@@ -11,9 +11,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.MushroomFarm.ChampignonProfiel.ChampignonProfiel;
+
+@Controller
 public class MetingController {
 	@Autowired
 	private MetingService metingService;
+	
+	//De pagina om de metingen op te halen
+		@RequestMapping("/meting")
+	    public String viewAllMetingen(Model model) {
+			List<Meting> listMetingen = metingService.listAll();
+		    model.addAttribute("listMetingen", listMetingen);
+
+		    return "metingen";
+	    }
 	
 	@RequestMapping("/meting/toevoegen")
     public String showNewProductPage(Model model) {

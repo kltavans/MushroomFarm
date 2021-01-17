@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="Metingen")
+@Table(name="metingen")
 public class Meting {
 
 	@Id

@@ -26,25 +26,4 @@ public class MetingController {
 
 		    return "metingen";
 	    }
-	
-	@RequestMapping("/meting/toevoegen")
-    public String showNewProductPage(Model model) {
-        Meting meting = new Meting();
-        model.addAttribute("meting", meting);
-
-        return "MetingToevoegen";
-    }
-
-	@RequestMapping(value = "/meting/save", method = RequestMethod.POST)
-	public String saveMeting(@RequestParam("meting_id") int meting_id,
-            @RequestParam("device_id") String device_id,
-            @RequestParam("datum") Date datum,
-            @RequestParam("lux") int lux,
-            @RequestParam("temperatuur") Double temperatuur,
-            @RequestParam("luchtvochtigheid") int luchtvochtigheid) {
-		Meting meting = new Meting(meting_id, device_id, datum, lux, temperatuur, luchtvochtigheid);
-		metingService.save(meting);
-
-		return "redirect:/";
-	}
 }

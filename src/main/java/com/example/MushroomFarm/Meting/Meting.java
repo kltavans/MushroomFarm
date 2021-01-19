@@ -38,30 +38,29 @@ public class Meting {
 		
 	}
 
-	public Meting(int metingID, String deviceID, Date datum, int lux, Double temperatuur,
+	public Meting(String device_id, Date datum, int lux, Double temperatuur,
 			int luchtvochtigheid) {
-		this.meting_id = metingID;
-		this.device_id = deviceID;
+		this.device_id = device_id;
 		this.datum = datum;
 		this.lux = lux;
 		this.temperatuur = temperatuur;
 		this.luchtvochtigheid = luchtvochtigheid;
 	}
 
-	public int getMetingID() {
+	public int getMeting_id() {
 		return meting_id;
 	}
 
-	public void setMetingID(int metingID) {
-		this.meting_id = metingID;
+	public void setMeting_id(int meting_id) {
+		this.meting_id = meting_id;
 	}
 
-	public String getDeviceID() {
+	public String getDevice_id() {
 		return device_id;
 	}
 
-	public void setDeviceID(String deviceID) {
-		this.device_id = deviceID;
+	public void setDevice_id(String device_id) {
+		this.device_id = device_id;
 	}
 
 	public Date getDatum() {

@@ -18,37 +18,12 @@ public class ChampignonlogboekController {
 	@Autowired
 	private ChampignonlogboekService champignonlogboekService;
 
-	@RequestMapping("/champignonlogboek/toevoegen")
-	public String showNewProductPage(Model model) {
-		Champignonlogboek champignonlogboek = new Champignonlogboek();
-		model.addAttribute("champignonlogboek", champignonlogboek);
-
-		return "ChampignonlogboekToevoegen";
-	}
-	
 	//De pagina om de toegevoegde champignon profielen op te halen
 		@RequestMapping("/logboek")
 	    public String viewChampignonlogboek(Model model) {
 			List<Champignonlogboek> listChampignonlogboek = champignonlogboekService.listAll();
 		    model.addAttribute("listChampignonlogboek", listChampignonlogboek);
 
-		    return "champignonlogboek";
+		    return "logboek";
 	    }
-
-	@RequestMapping(value = "/champignonlogboek/save", method = RequestMethod.POST)
-	public String saveLogboek(@RequestParam("nummer") int nummer,
-			@RequestParam("meting_id") int meting_id, @RequestParam("datum") Date datum,
-			@RequestParam("device_id") String device_id, @RequestParam("champignon_soort") String champignon_soort,
-			@RequestParam("grootte") String grootte, @RequestParam("melding_lux") String melding_lux,
-			@RequestParam("lux") int lux, @RequestParam("melding_temperatuur") String melding_temperatuur,
-			@RequestParam("temperatuur") Double temperatuur,
-			@RequestParam("melding_luchtvochtigheid") String melding_luchtvochtigheid,
-			@RequestParam("luchtvochtigheid") int luchtvochtigheid) {
-		Champignonlogboek champignonlogboek = new Champignonlogboek(nummer, meting_id, datum, device_id,
-				champignon_soort, grootte, melding_lux, lux, melding_temperatuur, temperatuur, melding_luchtvochtigheid,
-				luchtvochtigheid);
-		champignonlogboekService.save(champignonlogboek);
-
-		return "redirect:/";
-	}
 }

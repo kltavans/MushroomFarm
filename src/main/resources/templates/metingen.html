@@ -42,7 +42,7 @@
 			<tbody>
 				<tr>
 					<th>Meting ID</th>			
-<!-- 					<th>Device ID</th> -->
+					<th>Device ID</th>
 					<th>Datum</th>
 					<th>Lux</th>
 					<th>Temperatuur</th>
@@ -50,7 +50,7 @@
 				</tr>
 				<tr th:each="meting : ${listMetingen}">
 					<td th:text="${meting.meting_id}">Meting ID</td>
-<!-- 					<td th:text="${meting.device_id}">Device ID</td> -->
+					<td th:text="${meting.device_id}">Device ID</td>
 					<td th:text="${meting.datum}">Datum</td>
 					<td th:text="${meting.lux} + ' lx'">Lux</td>
 					<td th:text="${meting.temperatuur} + ' °C'">Temperatuur</td>

@@ -20,8 +20,8 @@ public class BatchesController {
 	
 	@RequestMapping("/batch/toevoegen")
     public String showNewProductPage(Model model) {
-        Batch batCH = new Batch();
-        model.addAttribute("batCH", batCH);
+        Batch batch = new Batch();
+        model.addAttribute("batch", batch);
 
         return "BatchToevoegen";
     }
@@ -35,7 +35,7 @@ public class BatchesController {
 		Batch batCH = new Batch(champignon_id, device_id, champignon_soort, grootte, groeitijd);
 		batchesService.save(batCH);
 
-		return "redirect:/";
+		return "redirect:/batch";
 	}
 	
 	@RequestMapping("/batch")

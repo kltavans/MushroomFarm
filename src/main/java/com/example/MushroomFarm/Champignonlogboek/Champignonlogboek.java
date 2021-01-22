@@ -37,7 +37,7 @@ public class Champignonlogboek {
     private String melding;
 	
 	@Column(name = "waarde", nullable = false, unique = false)
-    private double waarde;
+    private String waarde;
 
 	
 	public Champignonlogboek() {
@@ -46,7 +46,7 @@ public class Champignonlogboek {
 	
 
 	public Champignonlogboek(int meldingnummer, int metingID, Date datum, String deviceID, String champignonsoort,
-			String grootte, String melding, double waarde) {
+			String grootte, String melding, String waarde) {
 		this.nummer = meldingnummer;
 		this.meting_id = metingID;
 		this.datum = datum;
@@ -129,12 +129,12 @@ public class Champignonlogboek {
 	}
 
 
-	public double getWaarde() {
+	public String getWaarde() {
 		return waarde;
 	}
 
 
-	public void setWaarde(double waarde) {
+	public void setWaarde(String waarde) {
 		this.waarde = waarde;
 	}
 }

@@ -19,7 +19,7 @@ public class Meting {
     public int meting_id;
 	
 	@Column(name = "device_id", nullable = false, unique = false)
-    private String device_id;
+    private String device;
 	
 	@Column(name = "datum", nullable = false, unique = false)
     private Date datum;
@@ -38,9 +38,9 @@ public class Meting {
 		
 	}
 
-	public Meting(String device_id, Date datum, int lux, Double temperatuur,
+	public Meting(String device, Date datum, int lux, Double temperatuur,
 			int luchtvochtigheid) {
-		this.device_id = device_id;
+		this.device = device;
 		this.datum = datum;
 		this.lux = lux;
 		this.temperatuur = temperatuur;
@@ -55,12 +55,12 @@ public class Meting {
 		this.meting_id = meting_id;
 	}
 
-	public String getDevice_id() {
-		return device_id;
+	public String getDevice() {
+		return device;
 	}
 
-	public void setDevice_id(String device_id) {
-		this.device_id = device_id;
+	public void setDevice(String device) {
+		this.device = device;
 	}
 
 	public Date getDatum() {

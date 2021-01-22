@@ -9,8 +9,9 @@
 	rel="stylesheet">
 <link href="../static/css/style.css" th:href="@{/css/style.css}"
 	rel="stylesheet" />
-<link href="../static/css/metingen.css"
-	th:href="@{/css/metingen.css}" rel="stylesheet" />
+<link href="../static/css/metingen.css" th:href="@{/css/metingen.css}"
+	rel="stylesheet" />
+	<meta http-equiv="refresh" content="60">
 </head>
 <body>
 
@@ -25,7 +26,7 @@
 				<ul>
 					<li><a href="/">Sectoren</a></li>
 					<li><a href="/logboek">Logboek</a></li>
-					<li><a href="/meting">Metingen</a></li>
+					<li><a href="/metingen">Metingen</a></li>
 					<li><a href="/champignon-profielen">Profielen</a></li>
 					<li><a href="/device">Devices</a></li>
 					<li><a href="/batch">Batches</a></li>
@@ -41,16 +42,40 @@
 		<table id="metingen-table">
 			<tbody>
 				<tr>
-					<th>Meting ID</th>			
-					<th>Device ID</th>
-					<th>Datum</th>
-					<th>Lux</th>
-					<th>Temperatuur</th>
-					<th>Luchtvochtigheid</th>
+					<th>
+					<a th:href="@{'/page/' + ${currentMetingPage} + '?sortField=datum&sortDir=' + ${reverseSortDir}}">
+					Meting ID
+					</a>
+					</th>
+					<th>
+					<a th:href="@{'/page/' + ${currentMetingPage} + '?sortField=device&sortDir=' + ${reverseSortDir}}">
+					Device ID
+					</a>
+					</th>
+					<th>
+					<a th:href="@{'/page/' + ${currentMetingPage} + '?sortField=datum&sortDir=' + ${reverseSortDir}}">
+					Datum
+					</a>
+					</th>
+					<th>
+					<a th:href="@{'/page/' + ${currentMetingPage} + '?sortField=lux&sortDir=' + ${reverseSortDir}}">
+					Lux
+					</a>
+					</th>
+					<th>
+					<a th:href="@{'/page/' + ${currentMetingPage} + '?sortField=temperatuur&sortDir=' + ${reverseSortDir}}">
+					Temperatuur
+					</a>
+					</th>
+					<th>
+					<a th:href="@{'/page/' + ${currentMetingPage} + '?sortField=luchtvochtigheid&sortDir=' + ${reverseSortDir}}">
+					Luchtvochtigheid
+					</a>
+					</th>
 				</tr>
 				<tr th:each="meting : ${listMetingen}">
 					<td th:text="${meting.meting_id}">Meting ID</td>
-					<td th:text="${meting.device_id}">Device ID</td>
+					<td th:text="${meting.device}">Device ID</td>
 					<td th:text="${meting.datum}">Datum</td>
 					<td th:text="${meting.lux} + ' lx'">Lux</td>
 					<td th:text="${meting.temperatuur} + ' °C'">Temperatuur</td>
@@ -59,6 +84,35 @@
 			</tbody>
 		</table>
 	</div>
-
+	<div>&nbsp;</div>
+	<div class="pagination"> 
+		Total Items:[[${totalMetingen}]] - Page [[${currentMetingPage}]] of
+		[[${totalMetingPages}]] 
+		&nbsp; - &nbsp;
+		
+		<a th:if="${currentMetingPage>1}" th:href="@{/page/1?sortField=' + ${sortField } + '&sortDir=' + ${sortDir}}">First</a>
+		<span th:unless="${currentMetingPage>1}">First</span>
+		&nbsp;&nbsp;
+		
+		<a th:if="${currentMetingPage > 1}" th:href="@{'/page/' + ${currentMetingPage - 1}  + '?sortField=' + ${sortField } + '&sortDir=' + ${sortDir}}">Previous</a>
+		<span th:unless="${currentMetingPage > 1}">Previous</span>
+		&nbsp;&nbsp;
+		
+		<span th:each="i: ${#numbers.sequence(1,totalMetingPages)}">
+			<a th:if="${i != currentMetingPage}" th:href="@{'/page/' + ${i}} + '?sortField=' + ${sortField } + '&sortDir=' + ${sortDir}">[[${i}]]</a> &nbsp;&nbsp;
+			<span th:unless="${i != currentMetingPage}">[[${i}]]</span> 
+			&nbsp;&nbsp;
+		</span>
+		
+		<a th:if="${currentMetingPage < totalMetingPages}" th:href="@{'/page/' + ${currentMetingPage + 1} + '?sortField=' + ${sortField } + '&sortDir=' + ${sortDir}}">Next</a>
+		<span th:unless="${currentMetingPage < totalMetingPages}">Next</span>
+		&nbsp;&nbsp;
+		
+		
+		<a th:if="${currentMetingPage < totalMetingPages}" th:href="@{'/page/' + ${totalMetingPages} + '?sortField=' + ${sortField } + '&sortDir=' + ${sortDir}}">Last</a>
+		<span th:unless="${currentMetingPage < totalMetingPages}">Last</span>
+		&nbsp;&nbsp; 
+		
+	</div>
 </body>
 </html>

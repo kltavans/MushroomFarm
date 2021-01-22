@@ -19,7 +19,7 @@
 		<div class="navigation-bar">
 			<div class="brand">
 				<ul>
-					<li><a href="/">Mushroom Farm</a></li>
+					<li><a href="/">Mushroom <span>Farm</span></a></li>
 				</ul>
 			</div>
 			<div class="navigation-list">
@@ -43,7 +43,7 @@
 			<tbody>
 				<tr>
 					<th>
-					<a th:href="@{'/page/' + ${currentMetingPage} + '?sortField=datum&sortDir=' + ${reverseSortDir}}">
+					<a th:href="@{'/page/' + ${currentMetingPage} + '?sortField=metingen&sortDir=' + ${reverseSortDir}}">
 					Meting ID
 					</a>
 					</th>
@@ -74,7 +74,7 @@
 					</th>
 				</tr>
 				<tr th:each="meting : ${listMetingen}">
-					<td th:text="${meting.meting_id}">Meting ID</td>
+					<td th:text="${meting.metingen}">Meting ID</td>
 					<td th:text="${meting.device}">Device ID</td>
 					<td th:text="${meting.datum}">Datum</td>
 					<td th:text="${meting.lux} + ' lx'">Lux</td>

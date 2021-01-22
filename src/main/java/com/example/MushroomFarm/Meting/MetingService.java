@@ -16,7 +16,7 @@ public class MetingService {
     MetingRepository metingRepository;
 
     public Page<Meting> listAll(int pageNumber, String sortField, String sortDir) {
-    	Sort sort = Sort.by("device");
+    	Sort sort = Sort.by(sortField);
     	sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
     	
     	Pageable pageable = PageRequest.of(pageNumber - 1, 100, sort);
@@ -31,12 +31,12 @@ public class MetingService {
     	metingRepository.save(meting);
     }
 
-    public Meting get(long meting_id) {
-        return metingRepository.findById(meting_id).get();
+    public Meting get(long metingen) {
+        return metingRepository.findById(metingen).get();
     }
 
 
-    public void delete(long meting_id) {
-    	metingRepository.deleteById(meting_id);
+    public void delete(long metingen) {
+    	metingRepository.deleteById(metingen);
     }
 }

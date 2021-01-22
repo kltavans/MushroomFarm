@@ -16,7 +16,8 @@ public class Meting {
 
 	@Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    public int meting_id;
+	@Column(name = "meting_id", nullable = false, unique = false)
+    public int metingen;
 	
 	@Column(name = "device_id", nullable = false, unique = false)
     private String device;
@@ -47,12 +48,12 @@ public class Meting {
 		this.luchtvochtigheid = luchtvochtigheid;
 	}
 
-	public int getMeting_id() {
-		return meting_id;
+	public int getMetingen() {
+		return metingen;
 	}
 
-	public void setMeting_id(int meting_id) {
-		this.meting_id = meting_id;
+	public void setMetingen(int metingen) {
+		this.metingen = metingen;
 	}
 
 	public String getDevice() {

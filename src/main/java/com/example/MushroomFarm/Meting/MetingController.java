@@ -24,7 +24,7 @@ public class MetingController {
 	//De pagina om de metingen op te halen
 		@RequestMapping("/metingen")
 	    public String viewAllMetingen(Model model) {
-			return listByPage(model, 1, "device", "asc");
+			return listByPage(model, 1, "metingen", "asc");
 	    }
 		
 		@GetMapping("/page/{pageNumber}")

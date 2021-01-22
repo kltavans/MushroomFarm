@@ -1,6 +1,10 @@
 package com.example.MushroomFarm.Meting;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
@@ -11,8 +15,12 @@ public class MetingService {
 	@Autowired
     MetingRepository metingRepository;
 
-    public List<Meting> listAll() {
-        return metingRepository.findAll();
+    public Page<Meting> listAll(int pageNumber, String sortField, String sortDir) {
+    	Sort sort = Sort.by("device");
+    	sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
+    	
+    	Pageable pageable = PageRequest.of(pageNumber - 1, 100, sort);
+        return metingRepository.findAll(pageable);
     }
 
     public void save(Meting meting) {
@@ -24,15 +32,11 @@ public class MetingService {
     }
 
     public Meting get(long meting_id) {
-        return metingRepository.findById((int) meting_id).get();
+        return metingRepository.findById(meting_id).get();
     }
 
 
     public void delete(long meting_id) {
-    	metingRepository.deleteById((int) meting_id);
-    }
-    
-    public String findID(long meting_id ) {
-    	return metingRepository.findID(meting_id);
+    	metingRepository.deleteById(meting_id);
     }
 }

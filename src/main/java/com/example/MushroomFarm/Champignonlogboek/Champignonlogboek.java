@@ -24,8 +24,8 @@ public class Champignonlogboek {
 	@Column(name = "datum", nullable = false, unique = false)
     private Date datum;
 	
-	@Column(name = "device_id", nullable = false, unique = false)
-    private String device_id;
+	@Column(name = "sectornaam", nullable = false, unique = false)
+    private String sectornaam;
 	
 	@Column(name = "champignon_soort", nullable = false, unique = false)
     private String champignon_soort;
@@ -33,23 +33,11 @@ public class Champignonlogboek {
 	@Column(name = "grootte", nullable = false, unique = false)
     private String grootte;
 	
-	@Column(name = "melding_lux", nullable = false, unique = false)
-    private String melding_lux;
+	@Column(name = "melding", nullable = false, unique = false)
+    private String melding;
 	
-	@Column(name = "lux", nullable = false, unique = false)
-    private int lux;
-	
-	@Column(name = "melding_temperatuur", nullable = false, unique = false)
-    private String melding_temperatuur;
-	
-	@Column(name = "temperatuur", nullable = false, unique = false)
-    private Double temperatuur;
-	
-	@Column(name = "melding_luchtvochtigheid", nullable = false, unique = false)
-    private String melding_luchtvochtigheid;
-	
-	@Column(name = "luchtvochtigheid", nullable = false, unique = false)
-    private int luchtvochtigheid;
+	@Column(name = "waarde", nullable = false, unique = false)
+    private String waarde;
 
 	
 	public Champignonlogboek() {
@@ -58,20 +46,15 @@ public class Champignonlogboek {
 	
 
 	public Champignonlogboek(int meldingnummer, int metingID, Date datum, String deviceID, String champignonsoort,
-			String grootte, String meldingLux, int lux, String meldingTemperatuur, Double temperatuur,
-			String meldingLuchtvochtigheid, int luchtvochtigheid) {
+			String grootte, String melding, String waarde) {
 		this.nummer = meldingnummer;
 		this.meting_id = metingID;
 		this.datum = datum;
-		this.device_id = deviceID;
+		this.sectornaam = deviceID;
 		this.champignon_soort = champignonsoort;
 		this.grootte = grootte;
-		this.melding_lux = meldingLux;
-		this.lux = lux;
-		this.melding_temperatuur = meldingTemperatuur;
-		this.temperatuur = temperatuur;
-		this.melding_luchtvochtigheid = meldingLuchtvochtigheid;
-		this.luchtvochtigheid = luchtvochtigheid;
+		this.melding = melding;
+		this.waarde = waarde;
 	}
 
 
@@ -86,13 +69,13 @@ public class Champignonlogboek {
 	}
 
 
-	public int getMetingID() {
+	public int getMeting_id() {
 		return meting_id;
 	}
 
 
-	public void setMetingID(int metingID) {
-		this.meting_id = metingID;
+	public void setMeting_id(int meting_id) {
+		this.meting_id = meting_id;
 	}
 
 
@@ -106,23 +89,23 @@ public class Champignonlogboek {
 	}
 
 
-	public String getDeviceID() {
-		return device_id;
+	public String getSectornaam() {
+		return sectornaam;
 	}
 
 
-	public void setDeviceID(String deviceID) {
-		this.device_id = deviceID;
+	public void setSectornaam(String sectornaam) {
+		this.sectornaam = sectornaam;
 	}
 
 
-	public String getChampignonsoort() {
+	public String getChampignon_soort() {
 		return champignon_soort;
 	}
 
 
-	public void setChampignonsoort(String champignonsoort) {
-		this.champignon_soort = champignonsoort;
+	public void setChampignon_soort(String champignon_soort) {
+		this.champignon_soort = champignon_soort;
 	}
 
 
@@ -136,65 +119,23 @@ public class Champignonlogboek {
 	}
 
 
-	public String getMeldingLux() {
-		return melding_lux;
+	public String getMelding() {
+		return melding;
 	}
 
 
-	public void setMeldingLux(String meldingLux) {
-		this.melding_lux = meldingLux;
+	public void setMelding(String melding) {
+		this.melding = melding;
 	}
 
 
-	public int getLux() {
-		return lux;
+	public String getWaarde() {
+		return waarde;
 	}
 
 
-	public void setLux(int lux) {
-		this.lux = lux;
+	public void setWaarde(String waarde) {
+		this.waarde = waarde;
 	}
-
-
-	public String getMeldingTemperatuur() {
-		return melding_temperatuur;
-	}
-
-
-	public void setMeldingTemperatuur(String meldingTemperatuur) {
-		this.melding_temperatuur = meldingTemperatuur;
-	}
-
-
-	public Double getTemperatuur() {
-		return temperatuur;
-	}
-
-
-	public void setTemperatuur(Double temperatuur) {
-		this.temperatuur = temperatuur;
-	}
-
-
-	public String getMeldingLuchtvochtigheid() {
-		return melding_luchtvochtigheid;
-	}
-
-
-	public void setMeldingLuchtvochtigheid(String meldingLuchtvochtigheid) {
-		this.melding_luchtvochtigheid = meldingLuchtvochtigheid;
-	}
-
-
-	public int getLuchtvochtigheid() {
-		return luchtvochtigheid;
-	}
-
-
-	public void setLuchtvochtigheid(int luchtvochtigheid) {
-		this.luchtvochtigheid = luchtvochtigheid;
-	}
-	
-
 }
 

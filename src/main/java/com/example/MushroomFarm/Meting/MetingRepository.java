@@ -1,16 +1,10 @@
 package com.example.MushroomFarm.Meting;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MetingRepository extends JpaRepository<Meting, Integer>{
+public interface MetingRepository extends PagingAndSortingRepository<Meting, Long>{
 
-	// custom query to search to blog post by title or content
-		//  List<Product> findByTitleContainingOrContentContaining(String text, String textAgain);
-			
-		@Query(value = "SELECT meting_id FROM Metingen WHERE meting_id=?1", nativeQuery = true)
-		String findID(long meting_id);
+	
 }

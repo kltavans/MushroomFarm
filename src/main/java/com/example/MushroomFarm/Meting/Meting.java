@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="Metingen")
+@Table(name="metingen")
 public class Meting {
 
 	@Id
@@ -19,7 +19,7 @@ public class Meting {
     public int meting_id;
 	
 	@Column(name = "device_id", nullable = false, unique = false)
-    private String device_id;
+    private String device;
 	
 	@Column(name = "datum", nullable = false, unique = false)
     private Date datum;
@@ -38,30 +38,29 @@ public class Meting {
 		
 	}
 
-	public Meting(int metingID, String deviceID, Date datum, int lux, Double temperatuur,
+	public Meting(String device, Date datum, int lux, Double temperatuur,
 			int luchtvochtigheid) {
-		this.meting_id = metingID;
-		this.device_id = deviceID;
+		this.device = device;
 		this.datum = datum;
 		this.lux = lux;
 		this.temperatuur = temperatuur;
 		this.luchtvochtigheid = luchtvochtigheid;
 	}
 
-	public int getMetingID() {
+	public int getMeting_id() {
 		return meting_id;
 	}
 
-	public void setMetingID(int metingID) {
-		this.meting_id = metingID;
+	public void setMeting_id(int meting_id) {
+		this.meting_id = meting_id;
 	}
 
-	public String getDeviceID() {
-		return device_id;
+	public String getDevice() {
+		return device;
 	}
 
-	public void setDeviceID(String deviceID) {
-		this.device_id = deviceID;
+	public void setDevice(String device) {
+		this.device = device;
 	}
 
 	public Date getDatum() {

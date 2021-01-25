@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Mushroom Farm - Batch Toevoegen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <link href="../static/css/champignonProfielToevoegen.css" th:href="@{/css/batchToevoegen.css}" rel="stylesheet" />
+</head>
+<body>
+
+	<div class="container">
+		<div class="navigation-bar">
+			<div class="brand">
+				<ul>
+					<li><a href="/">Mushroom Farm</a></li>
+				</ul>
+  			</div>
+			<div class="navigation-list">
+				<ul>
+					<li><a href="/">Sectoren</a></li>
+					<li><a href="/">Logboek</a></li>
+					<li><a href="/">Profielen</a></li>
+					<li><a href="/device">Devices</a></li>
+					<li><a href="/batch">Batches</a></li>
+				</ul>
+  			</div>
+		</div>
+	</div>
+	<hr>
+	
+	<div align="center">
+	
+    	<h1>Batch Toevoegen</h1>
+    	<br/>
+    	
+	    <form action="#" th:action="@{/batch/save}" th:object="${batch}" onsubmit="required()" method="post">
+	        <table id="#batch-toevoegen-table" border="0" cellpadding="10">
+	            <tr>
+	                <td>Champignon ID:</td>
+	                <td><input type="number" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{champignon_id}" /></td>
+	            </tr>
+	            
+	            <tr>
+	                <td>Device ID:</td>
+	                <td><input type="text" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{device_id}" /></td>
+	            </tr>
+	            <tr>
+	                <td>Champignon Soort:</td>
+	                <td><input type="text" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{champignon_soort}" /></td>
+	            </tr>
+	            <tr>
+	            <td>Grootte:</td>
+	                <td><input type="text" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{grootte}" /></td>
+	            </tr>
+	            <td>Groeitijd:</td>
+	                <td><input type="number" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{groeitijd}" /></td>
+	            </tr>
+	                <td colspan="2"><button type="submit">Toevoegen</button> </td>
+	            </tr>
+	        </table>
+	    </form>
+	    
+	</div>
+    
+</body>
+</html>

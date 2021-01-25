@@ -43,7 +43,7 @@
 			<tbody>
 				<tr>
 					<th>
-					<a th:href="@{'/metingen/page/' + ${currentMetingPage} + '?sortField=datum&sortDir=' + ${reverseSortDir}}">
+					<a th:href="@{'/metingen/page/' + ${currentMetingPage} + '?sortField=meting&sortDir=' + ${reverseSortDir}}">
 					Meting ID
 					</a>
 					</th>
@@ -74,7 +74,7 @@
 					</th>
 				</tr>
 				<tr th:each="meting : ${listMetingen}">
-					<td th:text="${meting.meting_id}">Meting ID</td>
+					<td th:text="${meting.meting}">Meting ID</td>
 					<td th:text="${meting.device}">Device ID</td>
 					<td th:text="${meting.datum}">Datum</td>
 					<td th:text="${meting.lux} + ' lx'">Lux</td>

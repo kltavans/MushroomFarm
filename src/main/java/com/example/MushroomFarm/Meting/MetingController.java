@@ -20,7 +20,7 @@ public class MetingController {
 		//De pagina om de metingen weer te geven oplopend gesorteerd op datum 
 		@RequestMapping("/metingen")
 	    public String viewAllMetingen(Model model) {
-			return listByPageMeting(model, 1, "datum", "asc");
+			return listByPageMeting(model, 1, "meting", "desc");
 	    }
 		
 		//De pagina met gesorteerde metingen

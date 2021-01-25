@@ -19,7 +19,7 @@ public class ChampignonlogboekController {
 		//De pagina om het champignonlogboek weer te geven oplopend gesorteerd op datum 
 		@RequestMapping("/logboek")
 	    public String viewChampignonlogboek(Model model) { 
-		    return listByPageChampignonlogboek(model, 1, "datum", "asc");
+		    return listByPageChampignonlogboek(model, 1, "nummer", "desc");
 	    }
 		
 		//De pagina met een gesorteerde logboek

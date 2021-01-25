@@ -45,9 +45,8 @@ public class Champignonlogboek {
 	}
 	
 
-	public Champignonlogboek(int nummer, int meting, Date datum, String sectornaam, String soort,
+	public Champignonlogboek(int meting, Date datum, String sectornaam, String soort,
 			String grootte, String melding, String waarde) {
-		this.nummer = nummer;
 		this.meting = meting;
 		this.datum = datum;
 		this.sectornaam = sectornaam;

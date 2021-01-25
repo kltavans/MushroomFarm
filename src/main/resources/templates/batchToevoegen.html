@@ -41,21 +41,42 @@
 	                <td>Champignon ID:</td>
 	                <td><input type="number" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{champignon_id}" /></td>
 	            </tr>
-	            
 	            <tr>
 	                <td>Device ID:</td>
 	                <td><input type="text" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{device_id}" /></td>
 	            </tr>
 	            <tr>
 	                <td>Champignon Soort:</td>
-	                <td><input type="text" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{champignon_soort}" /></td>
+	                <td>
+	               		<select required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{grootte}">
+	               			<option id="selectedItem" value=""> -- </option>
+	               			<option value = "Witte Champignon">Witte Champignon</option>
+	               			<option value = "Bruine Champignon">Bruine Champignon</option>
+	               			<option value = "Portobello Champignon">Portobello Champignon</option>
+		                </select>
+		            </td>
 	            </tr>
 	            <tr>
-	            <td>Grootte:</td>
-	                <td><input type="text" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{grootte}" /></td>
+	           	<td>Grootte:</td>
+	                <td>
+	               		<select required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{grootte}">
+	               			<option id="selectedItem" value=""> -- </option>
+	               			<option value = "Fijn">Fijn</option>
+	               			<option value = "Middelgroot">Middelgroot</option>
+	               			<option value = "Reuze">Reuze</option>
+		                </select>
+		            </td>
 	            </tr>
-	            <td>Groeitijd:</td>
-	                <td><input type="number" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{groeitijd}" /></td>
+	            <tr>
+	            <td>Groeitijd:</td>	            
+	                <<td>
+	               		<select required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{grootte}">
+	               			<option id="selectedItem" value=""> -- </option>
+	               			<option value = "25">25</option>
+	               			<option value = "30">30</option>
+	               			<option value = "35">35</option>
+		                </select>
+		            </td>
 	            </tr>
 	                <td colspan="2"><button type="submit">Toevoegen</button> </td>
 	            </tr>

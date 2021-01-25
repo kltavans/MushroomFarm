@@ -3,13 +3,13 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
-    <title>Mushroom Farm - Devices</title>
+    <title>Mushroom Farm - Batches Overzicht</title>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
-    <link href="../static/css/batch.css" th:href="@{/css/batch.css}" rel="stylesheet" />
 </head>
 <body>
-    <div class="container">
+
+	<div class="container">
 		<div class="navigation-bar">
 			<div class="brand">
 				<ul>
@@ -18,21 +18,20 @@
   			</div>
 			<div class="navigation-list">
 				<ul>
-					<li><a href="/">Sectoren</a></li>
 					<li><a href="/logboek">Logboek</a></li>
 					<li><a href="/metingen">Metingen</a></li>
 					<li><a href="/champignon-profielen">Profielen</a></li>
-					<li><a href="/device">Devices</a></li>
-					<li><a href="/batch">Batches</a></li>
+					<li><a href="/devices">Devices</a></li>
+					<li><a href="/batches">Batches</a></li>
 				</ul>
   			</div>
 		</div>
 	</div>
 	<hr>
-    <div class="batches-overzicht">
-    	<h1>Batches</h1>
+    <div class="overzicht">
+    	<h1>Batches Overzicht</h1>
     	<br/>
-	    <table id="batches-table">
+	    <table id="table">
 			<tbody>
 			  <tr>
 			    <th>Batch ID</th>

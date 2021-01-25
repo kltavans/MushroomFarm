@@ -38,7 +38,7 @@ public class BatchesController {
 		return "redirect:/batch";
 	}
 	
-	@RequestMapping("/batch")
+	@RequestMapping("/batches")
     public String viewAllBatches(Model model) {
 		List<Batch> listBatch = batchesService.listAll();
 	    model.addAttribute("listBatch", listBatch);

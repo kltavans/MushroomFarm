@@ -3,15 +3,13 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8" />
-<title>Mushroom Farm</title>
+<title>Mushroom Farm - Logboek Overzicht</title>
 <link
 	href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap"
 	rel="stylesheet">
 <link href="../static/css/style.css" th:href="@{/css/style.css}"
 	rel="stylesheet" />
-<link href="../static/css/logboek.css" th:href="@{/css/logboek.css}"
-	rel="stylesheet" />
-	<meta http-equiv="refresh" content="60">
+<meta http-equiv="refresh" content="60">
 </head>
 <body>
 
@@ -24,64 +22,47 @@
 			</div>
 			<div class="navigation-list">
 				<ul>
-					<li><a href="/">Sectoren</a></li>
 					<li><a href="/logboek">Logboek</a></li>
 					<li><a href="/metingen">Metingen</a></li>
 					<li><a href="/champignon-profielen">Profielen</a></li>
-					<li><a href="/device">Devices</a></li>
-					<li><a href="/batch">Batches</a></li>
+					<li><a href="/devices">Devices</a></li>
+					<li><a href="/batches">Batches</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	<hr>
 
-	<div class="logboek-overzicht">
-		<h1>Logboek</h1>
+	<div class="overzicht">
+		<h1>Logboek Overzicht</h1>
 		<br />
-		<table id="logboek-table">
+		<table id="table">
 			<tbody>
 				<tr>
-				<th>
-					<a th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=nummer&sortDir=' + ${reverseSortDir}}">
-					Nummer
-					</a>
-					</th>
-					<th>
-					<a th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=meting&sortDir=' + ${reverseSortDir}}">
-					Meting ID
-					</a>
-					</th>
-					<th>
-					<a th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=datum&sortDir=' + ${reverseSortDir}}">
-					Datum
-					</a>
-					</th>
-					<th>
-					<a th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=sectornaam&sortDir=' + ${reverseSortDir}}">
-					Sectornaam
-					</a>
-					</th>
-					<th>
-					<a th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=soort&sortDir=' + ${reverseSortDir}}">
-					Champignon Soort
-					</a>
-					</th>
-					<th>
-					<a th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=grootte&sortDir=' + ${reverseSortDir}}">
-					Grootte
-					</a>
-					</th>
-					<th>
-					<a th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=melding&sortDir=' + ${reverseSortDir}}">
-					Melding
-					</a>
-					</th>
-					<th>
-					<a th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=waarde&sortDir=' + ${reverseSortDir}}">
-					Waarde
-					</a>
-					</th>
+					<th><a
+						th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=nummer&sortDir=' + ${reverseSortDir}}">
+							Nummer </a></th>
+					<th><a
+						th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=meting&sortDir=' + ${reverseSortDir}}">
+							Meting ID </a></th>
+					<th><a
+						th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=datum&sortDir=' + ${reverseSortDir}}">
+							Datum </a></th>
+					<th><a
+						th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=sectornaam&sortDir=' + ${reverseSortDir}}">
+							Sectornaam </a></th>
+					<th><a
+						th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=soort&sortDir=' + ${reverseSortDir}}">
+							Champignon Soort </a></th>
+					<th><a
+						th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=grootte&sortDir=' + ${reverseSortDir}}">
+							Grootte </a></th>
+					<th><a
+						th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=melding&sortDir=' + ${reverseSortDir}}">
+							Melding </a></th>
+					<th><a
+						th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=waarde&sortDir=' + ${reverseSortDir}}">
+							Waarde </a></th>
 				</tr>
 				<tr th:each="logboek : ${listLogboek}">
 					<td th:text="${logboek.nummer}">Nummer</td>
@@ -97,35 +78,30 @@
 		</table>
 	</div>
 
-<div>&nbsp;</div>
-	<div class="pagination"> 
-		Total Items:[[${totalLogboekMeldingen}]] - Page [[${currentLogboekPage}]] of
-		[[${totalLogboekMeldingen}]] 
-		&nbsp; - &nbsp;
-		
-		<a th:if="${currentLogboekPage>1}" th:href="@{/logboek/page/1?sortField=' + ${sortField } + '&sortDir=' + ${sortDir}}">First</a>
-		<span th:unless="${currentLogboekPage>1}">First</span>
-		&nbsp;&nbsp;
-		
-		<a th:if="${currentLogboekPage > 1}" th:href="@{'/logboek/page/' + ${currentLogboekPage - 1}  + '?sortField=' + ${sortField } + '&sortDir=' + ${sortDir}}">Previous</a>
+	<div>&nbsp;</div>
+	<div class="pagination">
+		Total Items:[[${totalLogboekMeldingen}]] - Page
+		[[${currentLogboekPage}]] of [[${totalLogboekMeldingen}]] &nbsp; -
+		&nbsp; <a th:if="${currentLogboekPage>1}"
+			th:href="@{/logboek/page/1?sortField=' + ${sortField } + '&sortDir=' + ${sortDir}}">First</a>
+		<span th:unless="${currentLogboekPage>1}">First</span> &nbsp;&nbsp; <a
+			th:if="${currentLogboekPage > 1}"
+			th:href="@{'/logboek/page/' + ${currentLogboekPage - 1}  + '?sortField=' + ${sortField } + '&sortDir=' + ${sortDir}}">Previous</a>
 		<span th:unless="${currentLogboekPage > 1}">Previous</span>
-		&nbsp;&nbsp;
-		
-		<span th:each="i: ${#numbers.sequence(1,totalLogboekPages)}">
-			<a th:if="${i != currentLogboekPage}" th:href="@{'/logboek/page/' + ${i}} + '?sortField=' + ${sortField } + '&sortDir=' + ${sortDir}">[[${i}]]</a> &nbsp;&nbsp;
-			<span th:unless="${i != currentLogboekPage}">[[${i}]]</span> 
+		&nbsp;&nbsp; <span
+			th:each="i: ${#numbers.sequence(1,totalLogboekPages)}"> <a
+			th:if="${i != currentLogboekPage}"
+			th:href="@{'/logboek/page/' + ${i}} + '?sortField=' + ${sortField } + '&sortDir=' + ${sortDir}">[[${i}]]</a>
+			&nbsp;&nbsp; <span th:unless="${i != currentLogboekPage}">[[${i}]]</span>
 			&nbsp;&nbsp;
-		</span>
-		
-		<a th:if="${currentLogboekPage < totalLogboekPages}" th:href="@{'/logboek/page/' + ${currentLogboekPage + 1} + '?sortField=' + ${sortField } + '&sortDir=' + ${sortDir}}">Next</a>
+		</span> <a th:if="${currentLogboekPage < totalLogboekPages}"
+			th:href="@{'/logboek/page/' + ${currentLogboekPage + 1} + '?sortField=' + ${sortField } + '&sortDir=' + ${sortDir}}">Next</a>
 		<span th:unless="${currentLogboekPage < totalLogboekPages}">Next</span>
-		&nbsp;&nbsp;
-		
-		
-		<a th:if="${currentLogboekPage < totalLogboekPages}" th:href="@{'/logboek/page/' + ${totalLogboekPages} + '?sortField=' + ${sortField } + '&sortDir=' + ${sortDir}}">Last</a>
+		&nbsp;&nbsp; <a th:if="${currentLogboekPage < totalLogboekPages}"
+			th:href="@{'/logboek/page/' + ${totalLogboekPages} + '?sortField=' + ${sortField } + '&sortDir=' + ${sortDir}}">Last</a>
 		<span th:unless="${currentLogboekPage < totalLogboekPages}">Last</span>
-		&nbsp;&nbsp; 
-		
+		&nbsp;&nbsp;
+
 	</div>
 </body>
 </html>

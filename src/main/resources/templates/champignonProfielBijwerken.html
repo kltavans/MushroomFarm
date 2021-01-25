@@ -6,7 +6,6 @@
     <title>Mushroom Farm - Champignon Profiel Bijwerken</title>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
-    <link href="../static/css/champignonProfielBijwerken.css" th:href="@{/css/champignonProfielBijwerken.css}" rel="stylesheet" />
 </head>
 <body>
 
@@ -19,12 +18,11 @@
   			</div>
 			<div class="navigation-list">
 				<ul>
-					<li><a href="/">Sectoren</a></li>
 					<li><a href="/logboek">Logboek</a></li>
 					<li><a href="/metingen">Metingen</a></li>
 					<li><a href="/champignon-profielen">Profielen</a></li>
-					<li><a href="/device">Devices</a></li>
-					<li><a href="/batch">Batches</a></li>
+					<li><a href="/devices">Devices</a></li>
+					<li><a href="/batches">Batches</a></li>
 				</ul>
   			</div>
 		</div>
@@ -37,7 +35,7 @@
     	<br />
     	
     	<form action="#" th:action="@{/champignon-profiel/{champignon_id}/bijwerken/save}" th:object="${champignon_profiel}" method="post">
-	        <table id="#cp-bijwerken-table" border="0" cellpadding="10">
+	        <table id="#table-edit" border="0" cellpadding="10">
 	        	<tr>
 	                <td>Champignon ID:</td>
 	                <td><input type="text" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{champignon_id}" readonly="readonly"/></td>

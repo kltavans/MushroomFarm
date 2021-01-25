@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Ubuntu, sans-serif;
 }
 
 html {
@@ -11,7 +12,16 @@ html {
 }
 
 a {
+	color: #4CAF50;
   text-decoration: none;
+}
+
+button {
+	padding: 5px;
+}
+
+button a {
+	color: black;
 }
 
 h1 {
@@ -71,4 +81,67 @@ span {
 }
 .navigation-list ul li:hover{
   color: orange;
+}
+
+.overzicht {
+	max-width: 1400px;
+	margin: auto;
+	padding: 20px;
+}
+
+#table {
+	font-size: 13px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#table td, #table th {
+  border: 1px solid #ddd;
+  padding: 10px;
+  min-width: 3em; 
+  width: 3em;
+  max-width: 3em;
+}
+
+#table tr:nth-child(even){background-color: #f2f2f2;}
+
+#table tr:hover {background-color: #ddd;}
+
+#table th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}
+
+#table td {
+	padding: 5px;
+  	font-size: 13px;
+}
+
+#table th a {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.pagination {
+	text-align: center;
+	font-size: 18px;
+	margin-bottom: 10px;
+	color: #000000;
+}
+
+.pagination a {
+	color: #000000;
+}
+
+.pagination currentLogboekPage {
+	color: #4CAF50;
+}
+
+#table-edit {
+	justify-content: center;
+	align-items: left;
+	color: black;
 }

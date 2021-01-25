@@ -1,5 +1,7 @@
 package com.example.MushroomFarm.Champignonlogboek;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,4 +24,9 @@ public class ChampignonlogboekService {
     	Pageable pageable = PageRequest.of(pageNumber - 1, 100, sort);
     	return champignonlogboekRepository.findAll(pageable);
     }
+    
+    public List<Champignonlogboek> findLastTen(int limit) {
+    	return champignonlogboekRepository.findLastTen(limit);
+    }
+    
 }

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.MushroomFarm.ChampignonProfiel.ChampignonProfiel;
+
 @Controller
 public class ChampignonlogboekController {
 	@Autowired
@@ -46,4 +48,13 @@ public class ChampignonlogboekController {
 
 		    return "logboek";
 		}
+		
+		//HomePage Logboek laatste 10 meldingen laten zien
+		@RequestMapping("/")
+	    public String viewLastTen(Model model) {
+			List<Champignonlogboek> listChampignonLogboeken = champignonlogboekService.findLastTen(10);
+		    model.addAttribute("listChampignonLogboeken", listChampignonLogboeken);
+
+		    return "index";
+	    }
 }

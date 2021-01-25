@@ -36,27 +36,7 @@ public class DevicesController {
 		return "redirect:/device";
 	}
 	
-	//Naar pagina om aan te passen
-	@RequestMapping("/device/{device_id}/aanpassen")
-    public ModelAndView showDeviceAanpassenPage(@PathVariable(name = "device_id") String device_id) {
-        ModelAndView mav = new ModelAndView("deviceAanpassen");
-        Device device = deviceService.get(device_id);
-        mav.addObject("device", device);
-
-        return mav;
-    }
-	
-	//Om aanpassingen op te slaan
-	@RequestMapping(value = "/device/{device_id}/aanpassen/save", method = RequestMethod.POST)
-    public String deviceAanpassen(@RequestParam("device_id") String device_id, 
-    		@RequestParam("device_naam") String device_naam,
-            @RequestParam("sectornaam") String sectornaam) {
-		deviceService.deviceAanpassen(device_id, device_naam, sectornaam);
-
-        return "redirect:/device";
-    }
-	
-	@RequestMapping("/device")
+	@RequestMapping("/devices")
     public String viewAllDevices(Model model) {
 		List<Device> listDevices = deviceService.listAll();
 	    model.addAttribute("listDevices", listDevices);

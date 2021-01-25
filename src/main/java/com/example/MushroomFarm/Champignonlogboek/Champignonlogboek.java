@@ -19,7 +19,7 @@ public class Champignonlogboek {
     public int nummer;
 	
 	@Column(name = "meting_id", nullable = false, unique = false)
-    private int meting_id;
+    private int meting;
 	
 	@Column(name = "datum", nullable = false, unique = false)
     private Date datum;
@@ -28,7 +28,7 @@ public class Champignonlogboek {
     private String sectornaam;
 	
 	@Column(name = "champignon_soort", nullable = false, unique = false)
-    private String champignon_soort;
+    private String soort;
 	
 	@Column(name = "grootte", nullable = false, unique = false)
     private String grootte;
@@ -45,13 +45,13 @@ public class Champignonlogboek {
 	}
 	
 
-	public Champignonlogboek(int meldingnummer, int metingID, Date datum, String deviceID, String champignonsoort,
+	public Champignonlogboek(int nummer, int meting, Date datum, String sectornaam, String soort,
 			String grootte, String melding, String waarde) {
-		this.nummer = meldingnummer;
-		this.meting_id = metingID;
+		this.nummer = nummer;
+		this.meting = meting;
 		this.datum = datum;
-		this.sectornaam = deviceID;
-		this.champignon_soort = champignonsoort;
+		this.sectornaam = sectornaam;
+		this.soort = soort;
 		this.grootte = grootte;
 		this.melding = melding;
 		this.waarde = waarde;
@@ -69,13 +69,13 @@ public class Champignonlogboek {
 	}
 
 
-	public int getMeting_id() {
-		return meting_id;
+	public int getMeting() {
+		return meting;
 	}
 
 
-	public void setMeting_id(int meting_id) {
-		this.meting_id = meting_id;
+	public void setMeting(int meting) {
+		this.meting = meting;
 	}
 
 
@@ -99,13 +99,13 @@ public class Champignonlogboek {
 	}
 
 
-	public String getChampignon_soort() {
-		return champignon_soort;
+	public String getSoort() {
+		return soort;
 	}
 
 
-	public void setChampignon_soort(String champignon_soort) {
-		this.champignon_soort = champignon_soort;
+	public void setSoort(String soort) {
+		this.soort = soort;
 	}
 
 

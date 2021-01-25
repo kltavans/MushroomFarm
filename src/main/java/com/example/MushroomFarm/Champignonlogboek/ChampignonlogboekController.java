@@ -1,29 +1,49 @@
 package com.example.MushroomFarm.Champignonlogboek;
 
-import java.sql.Date;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-
-import com.example.MushroomFarm.ChampignonProfiel.ChampignonProfiel;
 
 @Controller
 public class ChampignonlogboekController {
 	@Autowired
 	private ChampignonlogboekService champignonlogboekService;
 
-	//De pagina om de toegevoegde champignon profielen op te halen
+		//De pagina om het champignonlogboek weer te geven oplopend gesorteerd op datum 
 		@RequestMapping("/logboek")
-	    public String viewChampignonlogboek(Model model) {
-			List<Champignonlogboek> listChampignonlogboek = champignonlogboekService.listAll();
-		    model.addAttribute("listChampignonlogboek", listChampignonlogboek);
+	    public String viewChampignonlogboek(Model model) { 
+		    return listByPageChampignonlogboek(model, 1, "datum", "asc");
+	    }
+		
+		//De pagina met een gesorteerde logboek
+		@GetMapping("/logboek/page/{pageNumber}")
+		public String listByPageChampignonlogboek(Model model,
+				@PathVariable("pageNumber") int currentLogboekPage,
+				@Param("sortField") String sortField,
+				@Param("sortDir") String sortDir) {
+			Page<Champignonlogboek> logboekPage = champignonlogboekService.listAll(currentLogboekPage, sortField, sortDir);
+			long totalLogboekMeldingen= logboekPage.getTotalElements();
+			int totalLogboekPages = logboekPage.getTotalPages();
+			
+			List<Champignonlogboek> listLogboek = logboekPage.getContent();
+			
+			model.addAttribute("currentLogboekPage", currentLogboekPage);
+			model.addAttribute("totalLogboekMeldingen", totalLogboekMeldingen);
+			model.addAttribute("totalLogboekPages", totalLogboekPages);
+		    model.addAttribute("listLogboek", listLogboek);
+		    model.addAttribute("sortField", sortField);
+		    model.addAttribute("sortDir", sortDir);
+		    
+		    String reverseSortDir = sortDir.equals("asc") ? "desc" : "asc";
+		    model.addAttribute("reverseSortDir", reverseSortDir);
 
 		    return "logboek";
-	    }
+		}
 }

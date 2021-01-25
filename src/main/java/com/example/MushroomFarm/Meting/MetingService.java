@@ -22,4 +22,21 @@ public class MetingService {
     	Pageable pageable = PageRequest.of(pageNumber - 1, 100, sort);
         return metingRepository.findAll(pageable);
     }
+
+    public void save(Meting meting) {
+    	metingRepository.save(meting);
+    }
+	
+    public void change(Meting meting) {
+    	metingRepository.save(meting);
+    }
+
+    public Meting get(long metingen) {
+        return metingRepository.findById(metingen).get();
+    }
+
+
+    public void delete(long metingen) {
+    	metingRepository.deleteById(metingen);
+    }
 }

@@ -42,8 +42,13 @@
 		<table id="logboek-table">
 			<tbody>
 				<tr>
+				<th>
+					<a th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=nummer&sortDir=' + ${reverseSortDir}}">
+					Nummer
+					</a>
+					</th>
 					<th>
-					<a th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=datum&sortDir=' + ${reverseSortDir}}">
+					<a th:href="@{'/logboek/page/' + ${currentLogboekPage} + '?sortField=meting&sortDir=' + ${reverseSortDir}}">
 					Meting ID
 					</a>
 					</th>
@@ -78,7 +83,8 @@
 					</a>
 					</th>
 				</tr>
-				<tr th:each="logboek : ${listChampignonlogboek}">
+				<tr th:each="logboek : ${listLogboek}">
+					<td th:text="${logboek.nummer}">Nummer</td>
 					<td th:text="${logboek.meting}">Meting ID</td>
 					<td th:text="${logboek.datum}">Datum</td>
 					<td th:text="${logboek.sectornaam}">Sectornaam</td>

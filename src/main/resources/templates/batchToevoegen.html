@@ -39,16 +39,36 @@
 	        <table id="#batch-toevoegen-table" border="0" cellpadding="10">
 	            <tr>
 	                <td>Champignon ID:</td>
-	                <td><input type="number" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{champignon_id}" /></td>
+	                <td>
+	               		<select required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{champignon_id}">
+	               			<option id="selectedItem" value=""> -- </option>
+	               			<option value = "1">1. Witte Champignon - Fijn - 25</option>
+	               			<option value = "2">2. Witte Champignon - Middelgroot - 30</option>
+	               			<option value = "3">3. Witte Champignon - Reuze - 35</option>
+	               			<option value = "4">4. Bruine Champignon - Fijn - 25</option>
+	               			<option value = "5">5. Bruine Champignon - Middelgroot - 30</option>
+	               			<option value = "6">6. Bruine Champignon - Reuze - 35</option>
+	               			<option value = "7">7. Portobello Champignon - Fijn - 25</option>
+	               			<option value = "8">8. Portobello Champignon - Middelgroot - 30</option>
+	               			<option value = "9">9. Portobello Champignon - Reuze - 35</option>
+		                </select>
+		            </td>
 	            </tr>
 	            <tr>
 	                <td>Device ID:</td>
-	                <td><input type="text" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{device_id}" /></td>
+	                <td>
+	               		<select required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{device_id}">
+	               			<option id="selectedItem" value=""> -- </option>
+	               			<option value = "0059AC00001B04A4">Arduino David</option>
+	               			<option value = "0059AC00001B04A6">Arduino Dennis</option>
+	               			<option value = "0059AC00001B04A9">Arduino Khanh Long</option>
+		                </select>
+		            </td>
 	            </tr>
 	            <tr>
 	                <td>Champignon Soort:</td>
 	                <td>
-	               		<select required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{grootte}">
+	               		<select required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{champignon_soort}">
 	               			<option id="selectedItem" value=""> -- </option>
 	               			<option value = "Witte Champignon">Witte Champignon</option>
 	               			<option value = "Bruine Champignon">Bruine Champignon</option>
@@ -69,8 +89,8 @@
 	            </tr>
 	            <tr>
 	            <td>Groeitijd:</td>	            
-	                <<td>
-	               		<select required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{grootte}">
+	                <td>
+	               		<select required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{groeitijd}">
 	               			<option id="selectedItem" value=""> -- </option>
 	               			<option value = "25">25</option>
 	               			<option value = "30">30</option>
@@ -78,6 +98,7 @@
 		                </select>
 		            </td>
 	            </tr>
+	            <tr>
 	                <td colspan="2"><button type="submit">Toevoegen</button> </td>
 	            </tr>
 	        </table>

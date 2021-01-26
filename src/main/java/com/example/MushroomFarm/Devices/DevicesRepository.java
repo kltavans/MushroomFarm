@@ -15,10 +15,5 @@ public interface DevicesRepository extends JpaRepository<Device, String> {
 			
 	@Query(value = "SELECT device_id FROM Devices WHERE device_id =?1", nativeQuery = true)
 	String findID(long device_id);
-	
-	@Modifying(clearAutomatically = true)
-	@Query(value = "UPDATE Devices SET device_naam =?1, sectornaam =?2 WHERE device_id =?3", nativeQuery = true)
-	String deviceAanpassen(String device_naam, String sectornaam, String device_id);
-	
 
 }

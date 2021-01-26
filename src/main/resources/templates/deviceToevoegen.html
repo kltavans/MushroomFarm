@@ -6,7 +6,6 @@
     <title>Mushroom Farm - Device Toevoegen</title>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
-    <link href="../static/css/champignonProfielToevoegen.css" th:href="@{/css/champignonProfielToevoegen.css}" rel="stylesheet" />
 </head>
 <body>
 
@@ -14,17 +13,16 @@
 		<div class="navigation-bar">
 			<div class="brand">
 				<ul>
-					<li><a href="/">Mushroom Farm</a></li>
+					<li><a href="/">Mushroom <span>Farm</span></a></li>
 				</ul>
   			</div>
 			<div class="navigation-list">
 				<ul>
-					<li><a href="/">Sectoren</a></li>
 					<li><a href="/logboek">Logboek</a></li>
 					<li><a href="/metingen">Metingen</a></li>
 					<li><a href="/champignon-profielen">Profielen</a></li>
-					<li><a href="/device">Devices</a></li>
-					<li><a href="/batch">Batches</a></li>
+					<li><a href="/devices">Devices</a></li>
+					<li><a href="/batches">Batches</a></li>
 				</ul>
   			</div>
 		</div>
@@ -37,7 +35,7 @@
     	<br/>
     	
 	    <form action="#" th:action="@{/device/save}" th:object="${device}" onsubmit="required()" method="post">
-	        <table id="#device-table" border="0" cellpadding="10">
+	        <table id="#table-edit" border="0" cellpadding="10">
 	            <tr>
 	                <td>Device ID:</td>
 	                <td><input type="text" required pattern=".*\S+.*" title="Dit is een verplicht veld" th:field="*{device_id}" /></td>

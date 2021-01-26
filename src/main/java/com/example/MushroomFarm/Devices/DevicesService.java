@@ -44,9 +44,5 @@ public class DevicesService {
     	return devicesRepository.alldevicenaam(device_naam);
     }
     
-    public String deviceAanpassen(String device_id, String device_naam, String sectornaam) {
-    	return devicesRepository.deviceAanpassen(device_id, device_naam, sectornaam);
-    }
-    
 }
 

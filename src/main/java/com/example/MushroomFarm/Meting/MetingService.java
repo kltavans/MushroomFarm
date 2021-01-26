@@ -1,5 +1,6 @@
 package com.example.MushroomFarm.Meting;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -35,8 +36,11 @@ public class MetingService {
         return metingRepository.findById(metingen).get();
     }
 
-
     public void delete(long metingen) {
     	metingRepository.deleteById(metingen);
+    }
+    
+    public List<Meting> getLastMetingPerSector() {
+    	return metingRepository.getLastMetingPerSector();
     }
 }

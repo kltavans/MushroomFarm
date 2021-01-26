@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8"/>
-    <title>Mushroom Farm</title>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
-    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
-    <meta http-equiv="refresh" content="60">
+<meta charset="utf-8" />
+<title>Mushroom Farm</title>
+<link
+	href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap"
+	rel="stylesheet">
+<link href="../static/css/style.css" th:href="@{/css/style.css}"
+	rel="stylesheet" />
+<meta http-equiv="refresh" content="60">
 </head>
 <body>
 
@@ -16,20 +19,82 @@
 				<ul>
 					<li><a href="/">Mushroom <span>Farm</span></a></li>
 				</ul>
-  			</div>
+			</div>
 			<div class="navigation-list">
 				<ul>
-					<li><a href="/">Sectoren</a></li>
 					<li><a href="/logboek">Logboek</a></li>
 					<li><a href="/metingen">Metingen</a></li>
 					<li><a href="/champignon-profielen">Profielen</a></li>
-					<li><a href="/device">Devices</a></li>
-					<li><a href="/batch">Batches</a></li>
+					<li><a href="/devices">Devices</a></li>
+					<li><a href="/batches">Batches</a></li>
 				</ul>
-  			</div>
+			</div>
 		</div>
 	</div>
 	<hr>
-    
+
+	<div class="overzicht">
+
+<!--
+		<h1>
+			<a href="/logboek">Logboek Meldingen</a>
+		</h1>
+		<br />
+		<table id="table">
+			<tbody>
+				<tr>
+					<th>Device ID</th>
+					<th>Lux</th>
+					<th>Temperatuur</th>
+					<th>Luchtvochtigheid</th>
+				</tr>
+				<tr th:each="meting : ${listLastMetingPerSector}">
+					<td th:text="${meting.device}">Device ID</td>
+					<td th:text="${meting.lux}">Lux</td>
+					<td th:text="${meting.temperatuur}">Temperatuur</td>
+					<td th:text="${meting.luchtvochtigheid}">Luchtvochtigheid</td>
+				</tr>
+			</tbody>
+		</table>
+		<br />
+		<button>
+			<a href="/logboek">Alle Meldingen</a>
+		</button>
+//-->
+
+		<h1>
+			<a href="/logboek">Logboek Meldingen</a>
+		</h1>
+		<br />
+		<table id="table">
+			<tbody>
+				<tr>
+					<th>Nummer</th>
+					<th>Meting ID</th>
+					<th>Datum</th>
+					<th>Sectornaam</th>
+					<th>Champignon Soort</th>
+					<th>Grootte</th>
+					<th>Melding</th>
+					<th>Waarde</th>
+				</tr>
+				<tr th:each="champignonLogboek : ${listChampignonLogboeken}">
+					<td th:text="${champignonLogboek.nummer}">Nummer</td>
+					<td th:text="${champignonLogboek.meting}">Meting ID</td>
+					<td th:text="${champignonLogboek.datum}">Datum</td>
+					<td th:text="${champignonLogboek.sectornaam}">Sectornaam</td>
+					<td th:text="${champignonLogboek.soort}">Champignon Soort</td>
+					<td th:text="${champignonLogboek.grootte}">Grootte</td>
+					<td th:text="${champignonLogboek.melding}">Melding</td>
+					<td th:text="${champignonLogboek.waarde}">Waarde</td>
+				</tr>
+			</tbody>
+		</table>
+		<br />
+		<button>
+			<a href="/logboek">Alle Meldingen</a>
+		</button>
+		
+	</div>
 </body>
 </html>

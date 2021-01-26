@@ -24,6 +24,10 @@ button a {
 	color: black;
 }
 
+.ml {
+	float: right;
+}
+
 h1 {
 	padding: 10px 0px 10px 0px;
 	font-size: 24px;
@@ -144,4 +148,16 @@ span {
 	justify-content: center;
 	align-items: left;
 	color: black;
+}
+
+#table-edit td {
+	font-size: 14px;
+}
+
+#table-edit td, button {
+	margin-top: 10px;
+}
+
+#table-edit select {
+	width: 100%;
 }

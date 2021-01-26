@@ -23,7 +23,7 @@ public class DevicesController {
         Device device = new Device();
         model.addAttribute("device", device);
 
-        return "DeviceToevoegen";
+        return "deviceToevoegen";
     }
 
 	@RequestMapping(value = "/device/save", method = RequestMethod.POST)
@@ -41,7 +41,7 @@ public class DevicesController {
 		List<Device> listDevices = deviceService.listAll();
 	    model.addAttribute("listDevices", listDevices);
 
-	    return "Devices";
+	    return "devices";
     }
 
 }

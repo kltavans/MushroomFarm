@@ -23,7 +23,7 @@ public class BatchesController {
         Batch batch = new Batch();
         model.addAttribute("batch", batch);
 
-        return "BatchToevoegen";
+        return "batchToevoegen";
     }
 
 	@RequestMapping(value = "/batch/save", method = RequestMethod.POST)

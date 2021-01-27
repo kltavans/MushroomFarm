@@ -44,12 +44,12 @@ public class MetingController {
 		return "metingen";
 	}
 
-	// HomePage laatste meting zien per sector
-//		@RequestMapping("/")
-//		public String viewLastMetingPerSector(Model model) {
-//			List<Meting> listLastMetingPerSector = metingService.getLastMetingPerSector();
-//			model.addAttribute("listLastMetingPerSector", listLastMetingPerSector);
-//
-//			return "index";
-//		}
+//	 HomePage laatste meting zien per sector
+		@RequestMapping("/")
+		public String viewLastMetingPerSector(Model model) {
+			List<Meting> listLastMetingPerSector = metingService.getLastMetingPerSector();
+			model.addAttribute("listLastMetingPerSector", listLastMetingPerSector);
+
+			return "index";
+		}
 }

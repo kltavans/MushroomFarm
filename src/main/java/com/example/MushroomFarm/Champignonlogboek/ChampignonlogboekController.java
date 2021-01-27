@@ -50,11 +50,11 @@ public class ChampignonlogboekController {
 		}
 		
 		//HomePage Logboek laatste 10 meldingen laten zien
-		@RequestMapping("/")
-	    public String viewLastTen(Model model) {
-			List<Champignonlogboek> listChampignonLogboeken = champignonlogboekService.findLastTen(10);
-		    model.addAttribute("listChampignonLogboeken", listChampignonLogboeken);
-
-		    return "index";
-	    }
+//		@RequestMapping("/")
+//	    public String viewLastTen(Model model) {
+//			List<Champignonlogboek> listChampignonLogboeken = champignonlogboekService.findLastTen(10);
+//		    model.addAttribute("listChampignonLogboeken", listChampignonLogboeken);
+//
+//		    return "index";
+//	    }
 }
